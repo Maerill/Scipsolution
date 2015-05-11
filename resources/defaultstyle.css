@@ -1,3 +1,11 @@
+body{
+	font-family: Arial, sans serif
+}
 h1{
 	font-size: 30px;
+}
+
+nav{
+	height: 40px;
+	background-color: #b756ff;
 }
