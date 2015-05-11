@@ -1,2 +1,6 @@
-<h1>BliBlaBlub</h1>
-<a href="?site=overview">Overview</a>
+<nav>
+	<ul class="list-inline">
+  		<li><a href="?site=profil">Profil</a></li>
+  		<li><a href="?site=overview">Overview</a></li>
+	</ul>
+</nav>
