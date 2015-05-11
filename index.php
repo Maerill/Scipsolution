@@ -8,7 +8,11 @@ Startpage, every other page gets loaded in.
   </head>
   <body>
   <div class="header">
-  	<?php require_once("resources/pageHeader.php"); ?>
+  	<?php 
+  		if (!empty($_GET['site']) && $_GET['site'] !== 'home') {
+  			require_once("resources/pageHeader.php"); 
+  		}
+  	?>
   </div>
   <div class="content">
 	<?php
