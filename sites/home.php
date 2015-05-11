@@ -1,0 +1,1 @@
+<h1>Willkommen bei Scip</h1>

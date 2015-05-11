@@ -11,25 +11,23 @@ Startpage, every other page gets loaded in.
   	<?php require_once("resources/pageHeader.php"); ?>
   </div>
   <div class="content">
-	<h1>Willkommen bei Scip</h1>
 	<?php
-		// Wo sind die Seiten?
-		$seitenordner = 'sites/';
-		$defaultseite = 'home';
+		// Get page folder and set default page
+		$pagefolder = 'sites/';
+		$defaultpage = 'home';
 
-		if (!empty($_GET['site'])) {	// Wurde eine Seite uebergeben
-			$seite = $_GET["site"];
-		} else {						// Standardseite
-			$seite = $defaultseite;
+		if (!empty($_GET['site'])) {	// Check if there is a site
+			$page = $_GET["site"];
+		} else {
+			$page = $defaultpage;
 		}
 
-		// Gibt es die Datei wirklich
-		if (!file_exists($seitenordner . $seite .".php")) {
-            $seite = $defaultseite.".php";
+		if (!file_exists($pagefolder . $page .".php")) {
+            $page = $defaultpage.".php";
         }
 
-        // Inhalt einlesen
-        include $seitenordner . basename($seite.".php");
+        // Get content
+        include $pagefolder . basename($page.".php");
         ?>
   </div>
   	<?php require_once("resources/footer.php"); ?>
