@@ -79,10 +79,11 @@ a {
 }
 
 .center_picture{
-	margin-left: 0%;
+	width: 201px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .center_2{
-	margin-left: 0%;
+	width: 100%;
 	text-align:center;
-	margin-left: -180px;
 }
