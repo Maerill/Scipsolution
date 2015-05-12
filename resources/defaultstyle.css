@@ -21,6 +21,10 @@ a {
 	padding-left: 0px !important;
 }
 
+.navbar-linkbutton {
+	color: #FFFFFF !important;
+}
+
 .header {
 	padding-top: 60px;
 	padding-bottom: 60px;
