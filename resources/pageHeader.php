@@ -34,9 +34,9 @@
 				}
 			?>
 		</h1>
+		<img class="header-pic" src="pics/logo.png">
 		<p class="header-paragraph">
 			<?php echo $para; ?>
 		</p>
-		<!--<img src="pictures/logo.png">-->
 	</div>
 </div>

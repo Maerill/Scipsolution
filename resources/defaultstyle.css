@@ -29,9 +29,15 @@ a {
 }
 
 .header-title {
+	display: inline-block;
 	font-size: 60px;
 	color: #FFFFFF;
 	margin-bottom: 15px;
+}
+
+.header-pic {
+	width: 200px;
+	float: right;
 }
 
 .header-paragraph{
