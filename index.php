@@ -9,10 +9,11 @@ Startpage, every other page gets loaded in.
   <body>
   <?php 
   		if (!empty($_GET['site']) && $_GET['site'] !== 'home') {
-  			require_once("resources/pageHeader.php"); 
+  			require_once("resources/pageNavbar.php"); 
   		}
   ?>
-  <div class="content">
+  <?php require_once("resources/pageHeader.php"); ?>
+  <div class="container">
 	<?php
 		// Get page folder and set default page
 		$pagefolder = 'sites/';
@@ -30,7 +31,7 @@ Startpage, every other page gets loaded in.
 
         // Get content
         include $pagefolder . basename($page.".php");
-        ?>
+  ?>
   </div>
   	<?php require_once("resources/footer.php"); ?>
   </body>

@@ -1,20 +1,32 @@
-<div class="container">
-	<nav class="collapse navbar-collapse bs-navbar-collapse">
-  		<div class="container-fluid">
-    		<div class="navbar-header">
-        		<a class="navbar-brand" href="?site=overview">
-        			<img alt="Brand" height="20" src="pictures/logo.png">
-      			</a>
-    		</div>
-    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    			<ul class="nav navbar-nav">
-      				<li><a href="?site=profil">Profil</a></li>
-      				<li><a href="?site=overview">Overview</a></li>
-      			</ul>
-    			<ul class="nav navbar-nav navbar-right">    		
-      				<li><a href="?site=logout">Logout</a></li>
-      			</ul>
-    		</div><!-- /.navbar-collapse -->
-  		</div><!-- /.container-fluid -->
-	</nav>
+<div class="header">
+	<div class="container">
+		<h1 class="header-title">
+			<?php 
+				$title = "Scip - ";
+				$page = $_GET["site"];
+
+				//file_put_contents('log.txt', print_r($_GET, true), FILE_APPEND);
+				switch ($page) {
+					case "home":
+						$title .= "Home";
+						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
+						echo $title;
+						break;
+					case "profil":
+						$title .= "Profil";
+						$para = "Here you can see and edit your account information as well as see every of your uploaded pics.";
+						echo $title;
+						break;
+					case "overview":
+						$title .= "Overview";
+						$para = "Here you can see every picture, sort on uploading date.";
+						echo $title;
+						break;
+				}
+			?>
+		</h1>
+		<p class="header-paragraph">
+			<?php echo $para; ?>
+		</p>
+	</div>
 </div>

@@ -1,6 +1,6 @@
-<footer class="bs-docs-footer">
+<footer class="footer">
 	<div class="container">
-		<ul class="bs-docs-footer-links">
+		<ul class="footer-links">
 			<li>Scip GmbH</li>
 			<li>·</li>
 			<li>Bahnhöheweg 70</li>
