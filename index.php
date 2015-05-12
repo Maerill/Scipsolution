@@ -8,7 +8,7 @@ Startpage, every other page gets loaded in.
   </head>
   <body>
   <?php 
-  		if (!empty($_GET['site']) && $_GET['site'] !== 'home') {
+  		if (!empty($_GET['site']) && $_GET['site'] !== 'home' && $_GET['site'] !== 'register') {
   			require_once("resources/pageNavbar.php"); 
   		}else{
         require_once("resources/loginNavbar.php");
