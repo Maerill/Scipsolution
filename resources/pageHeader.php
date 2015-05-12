@@ -3,8 +3,12 @@
 		<h1 class="header-title">
 			<?php 
 				$title = "Scip - ";
-				$page = $_GET["site"];
-
+				if (isset($_GET["site"])) {
+					$page = $_GET["site"];
+				}else{
+					$page = "index";
+				}
+				
 				//file_put_contents('log.txt', print_r($_GET, true), FILE_APPEND);
 				switch ($page) {
 					case "home":
@@ -22,11 +26,17 @@
 						$para = "Here you can see every picture, sort on uploading date.";
 						echo $title;
 						break;
+					case "index":
+						$title .= "Login";
+						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
+						echo $title;
+						break;
 				}
 			?>
 		</h1>
 		<p class="header-paragraph">
 			<?php echo $para; ?>
 		</p>
+		<!--<img src="pictures/logo.png">-->
 	</div>
 </div>
