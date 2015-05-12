@@ -18,6 +18,7 @@ a {
 
 .navbar-scip {
 	font-weight: bold;
+	padding-left: 0px !important;
 }
 
 .header {

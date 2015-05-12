@@ -10,7 +10,9 @@ Startpage, every other page gets loaded in.
   <?php 
   		if (!empty($_GET['site']) && $_GET['site'] !== 'home') {
   			require_once("resources/pageNavbar.php"); 
-  		}
+  		}else{
+        require_once("resources/loginNavbar.php");
+      }
   ?>
   <?php require_once("resources/pageHeader.php"); ?>
   <div class="container">
