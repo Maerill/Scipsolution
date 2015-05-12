@@ -1,32 +1,8 @@
+::selection {
+	background-color: #E8761F;
+	text-shadow: none; 
+}
+
 body {
-	margin-top: 0;
-}
-h1 {
-	font-size: 30px;
-}
-
-footer {
-	background-color: #000000;
-	height: 30px;
-}
-
-nav {
-	height: 50px;
-	background-color: #b756ff;
-}
-
-ul li a {
-	text-decoration: none;
-	color: white;
-	font-size: 30px !important;
-	vertical-align: middle;
-}
-
-ul li a:hover {
-	text-decoration: none;
-	color: #FF4E49;
-}
-
-ul li {
-	line-height: 45px;
+	margin-top: 0px !important;
 }
