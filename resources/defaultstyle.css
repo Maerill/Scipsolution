@@ -3,6 +3,11 @@
 	text-shadow: none; 
 }
 
+::-moz-selection {
+	background-color: #E8761F;
+	text-shadow: none;
+}
+
 body {
 	margin-top: 0px !important;
 }
