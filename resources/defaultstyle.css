@@ -1,13 +1,13 @@
-::selection {
-	background-color: #E8761F;
+/*::selection {
+	background-color: #F800FF;
 	text-shadow: none; 
 }
 
 ::-moz-selection {
-	background-color: #E8761F;
+	background-color: #F800FF;
 	text-shadow: none;
 }
-
+*/
 body {
 	margin-top: 0px !important;
 }
