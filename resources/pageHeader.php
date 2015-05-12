@@ -31,6 +31,11 @@
 						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
 						echo $title;
 						break;
+					case "register":
+						$title .= "Registriation";
+						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
+						echo $title;
+						break;
 				}
 			?>
 		</h1>
