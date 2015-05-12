@@ -7,13 +7,11 @@ Startpage, every other page gets loaded in.
     <?php require_once("resources/head.php"); ?>
   </head>
   <body>
-  <div class="header">
-  	<?php 
+  <?php 
   		if (!empty($_GET['site']) && $_GET['site'] !== 'home') {
   			require_once("resources/pageHeader.php"); 
   		}
-  	?>
-  </div>
+  ?>
   <div class="content">
 	<?php
 		// Get page folder and set default page

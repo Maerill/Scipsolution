@@ -1,12 +1,13 @@
-<footer>
-		<div class="col-md-1"></div>
-		<div class="col-md-1"><img src="pictures/logo.png" height="70"></div>
-		<div class="col-md-1">Scip GmbH</div>
-		<div class="col-md-1">|</div>
-		<div class="col-md-2">Bahnhöheweg 70</div>
-		<div class="col-md-1">|</div>
-		<div class="col-md-1">3018 Bern</div>
-		<div class="col-md-1">|</div>
-		<div class="col-md-2">© MFR & RSP</div>
-		<div class="col-md-1"></div>
+<footer class="bs-docs-footer">
+	<div class="container">
+		<ul class="bs-docs-footer-links">
+			<li>Scip GmbH</li>
+			<li>·</li>
+			<li>Bahnhöheweg 70</li>
+			<li>·</li>
+			<li>3018 Bern</li>
+			<li>·</li>
+			<li>© MFR & RSP</li>
+		</ul>
+	</div>
 </footer>
