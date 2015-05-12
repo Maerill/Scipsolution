@@ -1,6 +1,12 @@
 <footer>
-	<p style="font-family: Arial,Helvetica,sans-serif; color: #ffffff; font-size: 12px;">
-		<span><img src="pictures/logo.png" width="104" height="90" alt="logo" /></span>
-		<span style="font-family: helvetica; font-size: 18px;">Scip GmbH | Bahnhöheweg 70 | 3018 Bern | © MFR & RSP</span>
-	</p>
+		<div class="col-md-1"></div>
+		<div class="col-md-1"><img src="pictures/logo.png" height="70"></div>
+		<div class="col-md-1">Scip GmbH</div>
+		<div class="col-md-1">|</div>
+		<div class="col-md-2">Bahnhöheweg 70</div>
+		<div class="col-md-1">|</div>
+		<div class="col-md-1">3018 Bern</div>
+		<div class="col-md-1">|</div>
+		<div class="col-md-2">© MFR & RSP</div>
+		<div class="col-md-1"></div>
 </footer>

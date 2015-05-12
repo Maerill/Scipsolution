@@ -6,3 +6,13 @@
 body {
 	margin-top: 0px !important;
 }
+
+footer {
+	background-color: #000000;
+	height: 70px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 24px !important;
+	line-height: 70px;
+	vertical-align: middle;
+}
