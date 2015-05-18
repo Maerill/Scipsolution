@@ -47,7 +47,7 @@ function validatePassword(){
     if($_GET['login'] == "noname"){ //Name bereits vergeben
       echo '<div class="alert alert-error">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>Benutzername schon vergeben!</strong> Wählen Sie einen anderes aus ;-)
+          <strong>Benutzername schon vergeben!</strong> Bitte wählen Sie einen anderen aus.
         </div>';
     }
   }
@@ -115,6 +115,4 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  
-  
 </div>
