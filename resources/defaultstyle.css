@@ -113,3 +113,28 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.register-label {
+	width: 30%;
+	height: 400px;
+	display: inline-block;
+}
+
+.register-label label {
+	float: none !important;
+	display: block;
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 15px;
+}
+
+.register-inputs {
+	width:69%;
+	float: right;
+}
+
+.register-inputs input {
+	margin-bottom: 15px;
+}
+
+.register-radio

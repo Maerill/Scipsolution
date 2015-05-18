@@ -55,67 +55,30 @@ function validatePassword(){
 <div class="login-picture">
   <img class="" src="pics/defaultProfilePic.png" width="200">
 </div>
-<div class="login-form">
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="username" class="col-sm-3 control-label">Username:</label>
-      <div class="col-sm-9">
-        <input type="text" class="form-control" id="username" placeholder="Enter your username">
-      </div>
-    </div>
+<form class="login-form">
+  <div class="register-label">
+    <label for="username" class="control-label">Username:</label>
+    <label for="password" class="control-label">Password:</label>
+    <label for="confirmPassword" class="control-label">Confirm password:</label>
+    <label for="email" class="control-label">Email:</label>
+    <label for="gender" class="control-label">Gender:</label>
+    <label for="phonenumber" class="control-label">Phonenumber</label>
+    <label for="birthday" class="control-label">Birthday</label>
   </div>
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="password" class="col-sm-3 control-label">Password:</label>
-      <div class="col-sm-9">
-        <input type="password" class="form-control" id="password" placeholder="Enter your password">
-      </div>
-    </div>
-  </div>
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="Confirm password" class="col-sm-3 control-label">Confirm password:</label>
-      <div class="col-sm-9">
-        <input type="password" class="form-control" id="confirm_password" placeholder="Confirm your password">
-      </div>
-    </div>
-  </div>
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="Gender" class="col-sm-3 control-label">Gender:</label>
-      <div class="col-sm-9">
+  <div class="register-inputs">
+    <input type="text" class="form-control" id="username" placeholder="Enter your username">
+    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+    <div class="register-radio">
       <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male" checked>Male</label>
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Male
+      </label>
       <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">Female</label>
-      </div>
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Female
+      </label>
     </div>
+    <input type="phonenumber" class="form-control" id="inputPassword3" placeholder="Enter your phonenumber">
+    <input type="birthday" class="form-control" id="birthday" placeholder="">
   </div>
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="E-Mail" class="col-sm-3 control-label">E-Mail:</label>
-      <div class="col-sm-9">
-        <input type="email" class="form-control" id="e-mail" placeholder="Enter your e-mail">
-      </div>
-    </div>
-  </div>
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="Birthday" class="col-sm-3 control-label">Birthday:</label>
-      <div class="col-sm-9">
-        <input type="date" class="form-control" id="birthday" placeholder="Enter your birthday">
-      </div>
-    </div>
-  </div>
-  <div class="login-heigth">
-    <div class="form-group">
-      <label for="Phone number" class="col-sm-3 control-label">Phone number:</label>
-      <div class="col-sm-9">
-        <input type="tel" class="form-control" id="password" placeholder="Enter your phone number">
-      </div>
-    </div>
-  </div>
-  <div class="login-loginbutton">
-    <button type="submit" class="btn btn-primary btn-lg">Register!</button>
-  </div>
-</div>
+</form>
