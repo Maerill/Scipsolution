@@ -103,7 +103,7 @@ function validatePassword(){
     <div class="form-group">
       <label for="Birthday" class="col-sm-3 control-label">Birthday:</label>
       <div class="col-sm-9">
-        <input type="DATE_FORMAT(GET_FORMAT(DATE,'EUR'));" class="form-control" id="Birthday" placeholder="Enter your birthday">
+        <input type="date" class="form-control" id="Birthday" placeholder="Enter your birthday">
       </div>
     </div>
   </div>
