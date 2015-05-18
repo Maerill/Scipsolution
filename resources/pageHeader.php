@@ -32,7 +32,7 @@
 						echo $title;
 						break;
 					case "register":
-						$title .= "Registriation";
+						$title .= "Registration";
 						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
 						echo $title;
 						break;
