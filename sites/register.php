@@ -1,21 +1,5 @@
 <!-- Validation Registrierungsformular -->
 <script language="javascript">
-$.validator.setDefaults({
-    showErrors: function (errorMap, errorList) {
-        this.defaultShowErrors();                            
-                           
-        $("." + this.settings.validClass)                    
-            .tooltip("destroy");            
- 
-        for (var i = 0; i < errorList.length; i++) {
-            var error = errorList[i];
-                         
-            $("#" + error.element.id)
-                .tooltip({placement: "right", trigger: "focus" })
-                .attr("data-original-title", error.message)                
-        }
-    }
-});
 function validatePassword(){  
   var validator = $("#form_register").validate({
     rules: {
@@ -82,6 +66,6 @@ function validatePassword(){
     <input type="date" class="form-control" id="birthday">
   </div>
   <div class="register-registerbutton">
-    <button type="submit" class="btn btn-primary btn-lg">Register now!</button>
+    <button type="submit" class="btn btn-primary btn-lg" onClick="validatePassword();">Register now!</button>
   </div>
 </form>

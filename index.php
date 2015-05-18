@@ -42,5 +42,6 @@ Startpage, every other page gets loaded in.
       </div>
       <?php require_once("resources/footer.php"); ?>
     </div>
+
   </body>
 </html>
