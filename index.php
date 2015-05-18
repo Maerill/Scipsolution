@@ -9,7 +9,7 @@ Startpage, every other page gets loaded in.
   <body>
     <div class="wrapper">
       <?php 
-      		if (!empty($_GET['site']) && $_GET['site'] !== 'home' && $_GET['site'] !== 'register') {
+      		if (!empty($_GET['site']) && $_GET['site'] !== 'login' && $_GET['site'] !== 'register') {
       			require_once("resources/pageNavbar.php"); 
       		}else{
             require_once("resources/loginNavbar.php");
@@ -23,7 +23,7 @@ Startpage, every other page gets loaded in.
     	<?php
     		// Get page folder and set default page
     		$pagefolder = 'sites/';
-    		$defaultpage = 'home';
+    		$defaultpage = 'login';
 
     		if (!empty($_GET['site'])) {	// Check if there is a site
     			$page = $_GET["site"];

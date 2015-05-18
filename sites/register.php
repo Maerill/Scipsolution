@@ -95,7 +95,7 @@ function validatePassword(){
     <div class="form-group">
       <label for="E-Mail" class="col-sm-3 control-label">E-Mail:</label>
       <div class="col-sm-9">
-        <input type="email" class="form-control" id="E-Mail" placeholder="Enter your e-mail">
+        <input type="email" class="form-control" id="e-mail" placeholder="Enter your e-mail">
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@ function validatePassword(){
     <div class="form-group">
       <label for="Birthday" class="col-sm-3 control-label">Birthday:</label>
       <div class="col-sm-9">
-        <input type="date" class="form-control" id="Birthday" placeholder="Enter your birthday">
+        <input type="date" class="form-control" id="birthday" placeholder="Enter your birthday">
       </div>
     </div>
   </div>
