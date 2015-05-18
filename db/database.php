@@ -12,10 +12,10 @@ If you want to connect to the DB, you must include the following php statment at
 
 $servername = "scip.dev";
 $username = "root";
-$password = "Scip12345";
+$password = "";
 
 function connectDb($dbUser,$dbPass) {    
-    $con = mysql_connect("localhost/pictr", $dbUser, $dbPass);
+    $con = mysql_connect("localhost/scip", $dbUser, $dbPass);
     // If it can't connect to the database: Error!
     if (!$con) {
         die('Could not connect: ' . mysql_error());
@@ -35,7 +35,7 @@ function checkUser($username, $pass) {
     //Make global variables availabe in the function
     global $dbUser, $dbPass, $dbName; 
     //Query
-    $sql = "SELECT USERNAME, PASSWORD FROM tb_user WHERE USERNAME='".$username."'";
+    $sql = "SELECT USERNAME, PASSWORD FROM tb_users WHERE USERNAME='".$username."'";
     //Connect
     $con = connectDb($dbUser, $dbPass);
     //SQL Select
@@ -56,17 +56,18 @@ function checkUser($username, $pass) {
 }
 
 
-function insert_user($username, $password, $name, $forename){
+function insert_user($username, $password, $name, $forename, $mail){
 	$username = mysql_real_escape_string($username);
 	$password = mysql_real_escape_string($password);
 	$name = mysql_real_escape_string($name);
 	$forename = mysql_real_escape_string($forename);
+    $mail = mysql_real_escape_string($mail);
 
 	global $dbUser, $dbPass, $dbName;
 	//SQL Statement
 	$date = (string)date('d.m.Y');
-	$sql = 'INSERT INTO tb_user(USERNAME, PASSWORD,NAME, FORENAME, COVER, PROFILEPICTURE, TIMESTAMP)';
-	$sql = $sql . ' VALUES("'.$username.'","'.md5($password).'","'.$name.'","'.$forename.'","upload/standard_coverpic.jpg", "upload/standard_profilepic.jpg", "' . $date . '")';
+	$sql = 'INSERT INTO tb_users(Username, Password, Name, Forename, Mail, Profilpic)';
+	$sql = $sql . ' VALUES("'.$username.'","'.md5($password).'","'.$name.'","'.$forename.'", "'.$mail.'","pics/defaultProfilePic.png")';
 	//DB Verbindung aufbauen
 	 $con = connectDb($dbUser, $dbPass);
 	 //SQL Select
@@ -115,4 +116,3 @@ function select_all_query($sql){
 	return $result;
 }
 ?>
-

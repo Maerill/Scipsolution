@@ -17,7 +17,7 @@ $.validator.setDefaults({
     }
 });
 function validatePassword(){  
-  var validator = $("#form_group").validate({
+  var validator = $("#form_register").validate({
     rules: {
       username :{required: true, maxlength: 31},                      
       password :{required: true, minlength: 5},
@@ -55,7 +55,7 @@ function validatePassword(){
 <div class="login-picture">
   <img class="" src="pics/defaultProfilePic.png" width="200">
 </div>
-<form class="login-form">
+<form method="post" id="form_register" name="form_register" class="login-form">
   <div class="register-label">
     <label for="username" class="control-label">Username:</label>
     <label for="password" class="control-label">Password:</label>
