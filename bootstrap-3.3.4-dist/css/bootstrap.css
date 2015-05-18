@@ -2645,6 +2645,7 @@ input[type="search"] {
   position: absolute;
   margin-top: 4px \9;
   margin-left: -20px;
+  height: 26px;
 }
 .radio + .radio,
 .checkbox + .checkbox {
