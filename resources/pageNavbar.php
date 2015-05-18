@@ -10,7 +10,7 @@
       				<li><a href="?site=overview">Overview</a></li>
       			</ul>
     			<ul class="nav navbar-nav navbar-right">    		
-      				<li><a href="?site=home">Logout</a></li>
+      				<li><a href="?site=login">Logout</a></li>
       			</ul>
     		</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->

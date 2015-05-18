@@ -52,11 +52,11 @@ function validatePassword(){
     }
   }
   ?>
-<div class="home-picture">
+<div class="login-picture">
   <img class="" src="pics/defaultProfilePic.png" width="200">
 </div>
-<div class="home-form">
-  <div class="home-heigth">
+<div class="login-form">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="username" class="col-sm-3 control-label">Username:</label>
       <div class="col-sm-9">
@@ -64,7 +64,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="password" class="col-sm-3 control-label">Password:</label>
       <div class="col-sm-9">
@@ -72,7 +72,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Confirm password" class="col-sm-3 control-label">Confirm password:</label>
       <div class="col-sm-9">
@@ -80,7 +80,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Gender" class="col-sm-3 control-label">Gender:</label>
       <div class="col-sm-9">
@@ -91,7 +91,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="E-Mail" class="col-sm-3 control-label">E-Mail:</label>
       <div class="col-sm-9">
@@ -99,7 +99,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Birthday" class="col-sm-3 control-label">Birthday:</label>
       <div class="col-sm-9">
@@ -107,7 +107,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Phone number" class="col-sm-3 control-label">Phone number:</label>
       <div class="col-sm-9">
@@ -115,7 +115,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-loginbutton">
+  <div class="login-loginbutton">
     <button type="submit" class="btn btn-primary btn-lg">Register!</button>
   </div>
   
