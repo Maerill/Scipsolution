@@ -52,11 +52,11 @@ function validatePassword(){
     }
   }
   ?>
-<div class="home-picture">
+<div class="login-picture">
   <img class="" src="pics/defaultProfilePic.png" width="200">
 </div>
-<div class="home-form">
-  <div class="home-heigth">
+<div class="login-form">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="username" class="col-sm-3 control-label">Username:</label>
       <div class="col-sm-9">
@@ -64,7 +64,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="password" class="col-sm-3 control-label">Password:</label>
       <div class="col-sm-9">
@@ -72,7 +72,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Confirm password" class="col-sm-3 control-label">Confirm password:</label>
       <div class="col-sm-9">
@@ -80,7 +80,7 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Gender" class="col-sm-3 control-label">Gender:</label>
       <div class="col-sm-9">
@@ -91,28 +91,31 @@ function validatePassword(){
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="E-Mail" class="col-sm-3 control-label">E-Mail:</label>
       <div class="col-sm-9">
-        <input type="email" class="form-control" id="E-Mail" placeholder="Enter your e-mail">
+        <input type="email" class="form-control" id="e-mail" placeholder="Enter your e-mail">
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Birthday" class="col-sm-3 control-label">Birthday:</label>
       <div class="col-sm-9">
-        <input type="date" class="form-control" id="Birthday" placeholder="Enter your birthday">
+        <input type="date" class="form-control" id="birthday" placeholder="Enter your birthday">
       </div>
     </div>
   </div>
-  <div class="home-heigth">
+  <div class="login-heigth">
     <div class="form-group">
       <label for="Phone number" class="col-sm-3 control-label">Phone number:</label>
       <div class="col-sm-9">
         <input type="tel" class="form-control" id="password" placeholder="Enter your phone number">
       </div>
     </div>
+  </div>
+  <div class="login-loginbutton">
+    <button type="submit" class="btn btn-primary btn-lg">Register!</button>
   </div>
 </div>
