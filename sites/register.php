@@ -39,7 +39,7 @@ function validatePassword(){
 <div class="login-picture">
   <img class="" src="pics/defaultProfilePic.png" width="200">
 </div>
-<form method="post" id="form_register" name="form_register" class="login-form">
+<form method="post" id="form_register" action="sites/registration.php" name="form_register" class="login-form">
   <div class="register-label">
     <label for="username" class="control-label">Username:</label>
     <label for="password" class="control-label">Password:</label>
@@ -50,10 +50,10 @@ function validatePassword(){
     <label for="birthday" class="control-label">Birthday:</label>
   </div>
   <div class="register-inputs">
-    <input type="text" class="form-control" id="username" placeholder="Enter your username">
-    <input type="password" class="form-control" id="password" placeholder="Enter your password">
-    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
-    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+    <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username">
+    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
+    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password">
+    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
     <div class="register-radio">
       <label class="radio-inline">
         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Male
@@ -62,8 +62,8 @@ function validatePassword(){
         <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Female
       </label>
     </div>
-    <input type="tel" class="form-control" id="phonenumber" placeholder="Enter your phonenumber">
-    <input type="date" class="form-control" id="birthday">
+    <input type="tel" class="form-control" name="phonenumber" id="phonenumber" placeholder="Enter your phonenumber">
+    <input type="date" class="form-control" name="birthday" id="birthday">
   </div>
   <div class="register-registerbutton">
     <button type="submit" class="btn btn-primary btn-lg" onClick="validatePassword();">Register now!</button>

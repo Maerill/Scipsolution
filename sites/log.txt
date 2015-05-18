@@ -1,0 +1,10 @@
+Array
+(
+    [username] => dfg
+    [password] => aaa
+    [confirmPassword] => aaa
+    [email] => A@B.de
+    [inlineRadioOptions] => option1
+    [phonenumber] => 111
+    [birthday] => 0001-11-11
+)
