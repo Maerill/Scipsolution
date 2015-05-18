@@ -115,6 +115,9 @@ function validatePassword(){
       </div>
     </div>
   </div>
+  <div class="home-loginbutton">
+    <button type="submit" class="btn btn-primary btn-lg">Register!</button>
+  </div>
   
   
 </div>
