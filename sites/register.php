@@ -62,8 +62,8 @@ function validatePassword(){
     <label for="confirmPassword" class="control-label">Confirm password:</label>
     <label for="email" class="control-label">Email:</label>
     <label for="gender" class="control-label">Gender:</label>
-    <label for="phonenumber" class="control-label">Phonenumber</label>
-    <label for="birthday" class="control-label">Birthday</label>
+    <label for="phonenumber" class="control-label">Phonenumber:</label>
+    <label for="birthday" class="control-label">Birthday:</label>
   </div>
   <div class="register-inputs">
     <input type="text" class="form-control" id="username" placeholder="Enter your username">
@@ -78,7 +78,10 @@ function validatePassword(){
         <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Female
       </label>
     </div>
-    <input type="phonenumber" class="form-control" id="inputPassword3" placeholder="Enter your phonenumber">
-    <input type="birthday" class="form-control" id="birthday" placeholder="">
+    <input type="tel" class="form-control" id="phonenumber" placeholder="Enter your phonenumber">
+    <input type="date" class="form-control" id="birthday">
+  </div>
+  <div class="register-registerbutton">
+    <button type="submit" class="btn btn-primary btn-lg">Register now!</button>
   </div>
 </form>
