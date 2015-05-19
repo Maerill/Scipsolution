@@ -42,16 +42,19 @@
 			<h1>Your Pics</h1>
 		</div>
 		<div class="profil-piccollegtion">
-			<div class="col-md-3 profil-inlineblock">
+			<div class="profil-inlineblock">
 				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
 			</div>
-			<div class="col-md-3 profil-inlineblock">
+			<div class="profil-inlineblock">
 				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
 			</div>
-			<div class="col-md-3 profil-inlineblock">
+			<div class="profil-inlineblock">
 				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
 			</div>
-			<div class="col-md-3 profil-inlineblock">
+			<div class="profil-inlineblock">
+				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
+			</div>
+			<div class="profil-inlineblock">
 				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
 			</div>
 		</div>

@@ -231,17 +231,20 @@ a {
 
 .profil-piccollegtion {
 	width: 100%;
-	margin-left: 30px; 
+	min-width: 1170px;
+	margin-left: 15px;
 }
 
 .profil-inlineblock {
 	padding:0 !important;
+	display: inline-block;
+	width: 200px;
+	margin-right: 30px;
 }
 
 .profil-heading {
-	margin-left: 30px;
+	margin-left: 15px;
 }
-
 .overview-piccollection {
 	width: 100%;
 	margin-left: 30px; 
