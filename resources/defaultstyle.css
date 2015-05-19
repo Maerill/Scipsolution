@@ -241,3 +241,16 @@ a {
 .profil-heading {
 	margin-left: 30px;
 }
+
+.overview-piccollection {
+	width: 100%;
+	margin-left: 30px; 
+}
+
+.overview-inlineblock {
+	padding:0 !important;
+}
+
+.overview-heading {
+	margin-left: 30px;
+}

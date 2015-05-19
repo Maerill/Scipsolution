@@ -1,20 +1,3 @@
-<?php
-//Nach einlogen, GET Variable login überprüfen
-if (isset($_GET['login'])){
-  if($_GET['login'] == "success"){ //Wenn Login erfolgreich
-    echo '<div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>Login successfully!</strong> Welcome to Scip!
-      </div>';
-  }
-  if($_GET['login'] == "fail"){ //Wenn Login nicht erfolgreich
-    echo '<div class="alert alert-error">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <strong>Login failed!</strong> Username or Passwort incorrect!
-      </div>';
-  }
-}
-?>
 
 <!-- Login Formular -->
 <div class="login-picture">

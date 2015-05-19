@@ -12,10 +12,10 @@ If you want to connect to the DB, you must include the following php statment at
 
 $dbName = "scip";
 $dbUser = "root";
-$dbPass = "";
+$dbPass = "Scip12345";
 
 function connectDb($dbUser,$dbPass) {    
-    $con = mysql_connect("localhost/scip", $dbUser, $dbPass);
+    $con = mysql_connect("127.0.0.1", $dbUser, $dbPass);
     // If it can't connect to the database: Error!
     if (!$con) {
         die('Could not connect: ' . mysql_error());
@@ -57,20 +57,23 @@ function checkUser($username, $pass) {
 
 
 function insert_user($username, $password){
+    
 	$username = mysql_real_escape_string($username);
 	$password = mysql_real_escape_string($password);
 
 	global $dbUser, $dbPass, $dbName;
 	//SQL Statement
-	$date = (string)date('d.m.Y');
+	//$date = (string)date('d.m.Y');
 	$sql = 'INSERT INTO tb_users(Username, Password, Mail, Profilpic)';
-	$sql = $sql . ' VALUES("'.$username.'","'.md5($password).'", "'.$mail.'","pics/defaultProfilePic.png")';
+	$sql = $sql . ' VALUES("'.$username.'","'.md5($password).'", "'.$mail.'","/../pics/defaultProfilePic.png")';
 	//DB Verbindung aufbauen
 	 $con = connectDb($dbUser, $dbPass);
 	 //SQL Select
     mysql_select_db($dbName, $con);
+
+    
     $result = mysql_query($sql, $con);
-	
+    
 }
 
 

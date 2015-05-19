@@ -39,7 +39,7 @@ function validatePassword(){
 <div class="login-picture">
   <img class="" src="pics/defaultProfilePic.png" width="200">
 </div>
-<form method="post" id="form_register" action="index.php" name="form_register" class="login-form">
+<form method="post" id="form_register" action="resources/registration.php" name="form_register" class="login-form">
   <div class="register-label">
     <label for="username" class="control-label">Username:</label>
     <label for="password" class="control-label">Password:</label>

@@ -45,7 +45,7 @@ if(isset($_POST['login_username'])){
 }
 
 /* Wenn der Benutzer angemeldet ist */
-if ($_SESSION['login'] == 1){
+/* if ($_SESSION['login'] == 1){
 	require_once(__DIR__'/../resources/functions.php');
 	require_once(__DIR__'/../sites/navigation.php');
 	//Wenn ein Bild heraufgeladen wurde
@@ -74,41 +74,42 @@ if ($_SESSION['login'] == 1){
 	} else {
 		//Wenn keine P Get Variable gesetzt wird, dann wird das Dashboard geladen
 		require_once(__DIR__'/../sites/overview.php');
-	} */
+	} 
 } else {
 //Nicht eingeloggt
-	if (isset($_GET['p'])){
-		//Regristrierungsseite
-		if ($_GET['p'] == "register"){
-			//Prüfen, ob der User schon existiert
-			$search_user= "SELECT * FROM tb_users WHERE Username='".mysql_real_escape_string($_POST['username'])."'";
-			$result = select_query($search_user);
-			if(!empty($result)){
-				header('Location: registration.php?p=register&login=noname'); //Wenn Benutzername schon vergeben ist, dann wird eine Fehlermeldung angezeigt
+	*/
+if (isset($_GET['p'])){
+	//Regristrierungsseite
+	if ($_GET['p'] == "register"){
+		//Prüfen, ob der User schon existiert
+		$search_user= "SELECT * FROM tb_users WHERE Username='".mysql_real_escape_string($_POST['username'])."'";
+		$result = select_query($search_user);
+		if(!empty($result)){
+			header('Location: register.php?p=register&login=noname'); //Wenn Benutzername schon vergeben ist, dann wird eine Fehlermeldung angezeigt
+		} else {
+			//Alle Felder müssen ausgefüllt sein
+			if(!empty($_POST['username']) && !empty($_POST['password'])){
+				//User erstellen
+				insert_user($_POST['username'],$_POST['password']);
+				header('Location: registration.php?p=register&login=success');
 			} else {
-				//Alle Felder müssen ausgefüllt sein
-				if(!empty($_POST['username']) && !empty($_POST['password'])){
-					//User erstellen
-					insert_user($_POST['username'],$_POST['password']);
-					header('Location: registration.php?p=register&login=success');
-				} else {
-					echo '<span class="help-inline">Bitte füllen Sie alle Felder aus!</span>';
-				}	
-			}
-			if (isset($_GET['login'])){
-				//Login erfolgreich oder nicht
-				if ($_GET['login'] == "success" ||$_GET['login'] == "fail"){
-					require_once(__DIR__'/../sites/login.php');
-				} else {
-					require_once(__DIR__'/../sites/register.php');
-				}
-			} else {
-				require_once(__DIR__'/../sites/register.php');
-			}
+				echo '<span class="help-inline">Bitte füllen Sie alle Felder aus!</span>';
+			}	
 		}
-	} else {
-		//Wenn gar keine Parameter, dann Login Seite
-		require_once(__DIR__'/../sites/login.php');
+		if (isset($_GET['login'])){
+			//Login erfolgreich oder nicht
+			if ($_GET['login'] == "success" ||$_GET['login'] == "fail"){
+				require_once(__DIR__.'/../sites/login.php');
+			} else {
+				require_once(__DIR__.'/../sites/register.php');
+			}
+		} else {
+			require_once(__DIR__.'/../sites/register.php');
+		}
 	}
+} else {
+	//Wenn gar keine Parameter, dann Login Seite
+	require_once(__DIR__.'/../sites/login.php');
 }
+
 ?>
