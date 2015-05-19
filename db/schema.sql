@@ -1,40 +1,90 @@
+-- phpMyAdmin SQL Dump
+-- version 4.3.11
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 19. Mai 2015 um 16:16
+-- Server-Version: 5.6.24
+-- PHP-Version: 5.6.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
 -- Datenbank: `scip`
 --
 
-CREATE DATABASE `scip` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `scip`;
+-- --------------------------------------------------------
+
+CREATE DATABASE IF NOT EXISTS scip;
+USE scip;
+
+--
+-- Tabellenstruktur für Tabelle `tbl_pictures`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_pictures` (
+  `id` int(10) unsigned NOT NULL,
+  `picture` blob NOT NULL,
+  `userId` int(10) unsigned NOT NULL,
+  `likes` int(10) unsigned DEFAULT NULL,
+  `dislikes` int(10) unsigned DEFAULT NULL,
+  `comments` varchar(1023) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `tb_pictures`
+-- Tabellenstruktur für Tabelle `tbl_users`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_pictures` (
-  `PID` int(11) NOT NULL AUTO_INCREMENT,
-  `UID` int(11) NOT NULL,
-  `Likes` int(11) NOT NULL,
-  `Dislikes` int(11) NOT NULL,
-  `Comments` varchar(1023) NOT NULL,
-  PRIMARY KEY (`PID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+  `id` int(10) unsigned NOT NULL,
+  `username` varchar(31) NOT NULL,
+  `password` varchar(31) NOT NULL,
+  `gender` tinyint(1) unsigned DEFAULT NULL,
+  `mail` varchar(127) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `phonenumber` int(11) DEFAULT NULL,
+  `pictureId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Tabellenstruktur für Tabelle `tb_users`
+-- Indizes der exportierten Tabellen
 --
 
-CREATE TABLE IF NOT EXISTS `tb_users` (
-  `UID` int(11) NOT NULL AUTO_INCREMENT,
-  `Username` varchar(127) NOT NULL,
-  `Password` varchar(127) NOT NULL,
-  `Name` varchar(127) NOT NULL,
-  `Forename` varchar(127) NOT NULL,
-  `Gender` tinyint(1) DEFAULT NULL,
-  `Mail` varchar(127) NOT NULL,
-  `Birthday` date NOT NULL,
-  `Phonenumber` int(11) NOT NULL,
-  `Profilpic` varchar(127) DEFAULT NULL,
-  PRIMARY KEY (`UID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+--
+-- Indizes für die Tabelle `tbl_pictures`
+--
+ALTER TABLE `tbl_pictures`
+ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `tbl_users`
+--
+ALTER TABLE `tbl_users`
+ADD PRIMARY KEY (`id`), ADD KEY `pictureId` (`pictureId`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `tbl_pictures`
+--
+ALTER TABLE `tbl_pictures`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT für Tabelle `tbl_users`
+--
+ALTER TABLE `tbl_users`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
