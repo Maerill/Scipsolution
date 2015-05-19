@@ -247,13 +247,17 @@ a {
 }
 .overview-piccollection {
 	width: 100%;
-	margin-left: 30px; 
+	min-width: 1170px;
+	margin-left: 15px;
 }
 
 .overview-inlineblock {
 	padding:0 !important;
+	display: inline-block;
+	width: 200px;
+	margin-right: 15px;
 }
 
 .overview-heading {
-	
+	margin-left: 15px;
 }
