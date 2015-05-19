@@ -36,6 +36,11 @@
 						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
 						echo $title;
 						break;
+					case "editprofil":
+						$title .= "Profil editor";
+						$para = "Edit your profil like you want.";
+						echo $title;
+						break;
 				}
 			?>
 		</h1>

@@ -16,6 +16,14 @@ a {
 	color: #2EC4FF !important;
 }
 
+.right {
+	float: right;
+}
+
+.fontcolorwhite {
+	color: #FFFFFF;
+}
+
 .wrapper {
 	min-height: 100%;
 	position: relative;
@@ -59,6 +67,8 @@ a {
 
 .content {
 	padding-bottom: 200px;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
 }
 
 .footer {
@@ -147,4 +157,87 @@ a {
 	width: 144px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.profil-wrapper {
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+	margin-bottom: 50px;
+}
+
+.profil-label {
+	width: 30%;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+.profil-label label {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.profil-inputs {
+	width: 60%;
+	float: right;
+	padding-right: 10px;
+}
+
+.profil-inputs input {
+	margin-bottom: 10px;
+}
+
+.profil-radio {
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.profil-profilpic {
+	width: 215px;
+	display: table-cell;
+	margin-right: 10px;
+	padding-left: 30px;
+}
+
+.profil-userinfo {
+	display: table-cell;
+	width: 90%;
+	min-width: 300px;
+	vertical-align: top;
+}
+
+.profil-picture {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profil-mostLiked {
+	width: 200px;
+	display: table-cell;
+}
+
+.profil-editbutton {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.profil-editbutton a {
+	color: #FFFFFF !important;
+}
+
+.profil-piccollegtion {
+	width: 100%;
+	margin-left: 30px; 
+}
+
+.profil-inlineblock {
+	padding:0 !important;
+}
+
+.profil-heading {
+	margin-left: 30px;
 }
