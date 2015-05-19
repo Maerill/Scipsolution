@@ -12,7 +12,7 @@
 				//file_put_contents('log.txt', print_r($_GET, true), FILE_APPEND);
 				switch ($page) {
 					case "login":
-						$title .= "login";
+						$title .= "Login";
 						$para = "Welcome to Scip! <br> The free website to share your best pictures.";
 						echo $title;
 						break;
