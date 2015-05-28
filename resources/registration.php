@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <?php
-
-
-file_put_contents('log.txt', print_r($_POST, true));
-var_dump($_POST);
 
 //Session start
 session_start();
-//Ausgabe erst am Schluss anzeigen
-ob_start();
+
+require_once(__DIR__.'/../config.php');
+require_once(__DIR__.'/../db/database.php');
+require_once(__DIR__.'/../db/user.php');
+
 //Header setzen
 header("Content-Type: text/html; charset=utf-8");
 
@@ -19,16 +17,8 @@ header("Content-Type: text/html; charset=utf-8");
 if(!isset($_SESSION['login'])){
 	$_SESSION['login'] = 0;
 }
-/*
-Datenbankdateien einfügen
-*/
-require_once(__DIR__.'/../db/database.php'); 
-?>
 
-</head>
-<body>
 
-<?php
 /* Benuterauthentifizierung */
 if(isset($_POST['login_username'])){
 		//Wenn Auth in Ordnung, dann wird die Session Variable auf 1 gesetzt und die UID wird dazugespeichert

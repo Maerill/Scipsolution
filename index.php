@@ -1,6 +1,53 @@
 <!--
 Startpage, every other page gets loaded in.
 -->
+
+<?php
+  session_start();
+  // load files
+  require_once(__DIR__.'/config.php');
+  require_once(__DIR__.'/db/database.php');
+  require_once(__DIR__.'/db/user.php');
+
+  // set charset
+  header("Content-Type: text/html; charset=utf-8");
+
+  // USER ERSTELLEN!
+  /*
+  var_dump(insert_user([
+    'username' => 'finalgamer',
+    'password' => 'mypw',
+    'mail' => 'michele.dn@live.com',
+    'gender' => 1,
+    'birthday' => '',
+    'phonenumber' => '',
+  ]));
+  */
+  
+
+/* LOGIN ÜBERPRÜFEN
+  check_user('finalgamer', 'mypw');
+  
+*/
+
+  // DATENBANK FEHLER ANZEIGEN
+  //Database::error();
+
+  /* Datenbank benutzen
+  $result = Database::query($sql, []);
+  if($result === false) {
+    return false;
+  }
+  $result->fetch_assoc();
+
+
+  //config benutzen
+  confg()['wert']
+
+*/
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
   <head>
