@@ -3,15 +3,16 @@
 
     $dbClass = new Database();
 
-    die($dbClass);
-
     $target_dir = "pics/";
-//die(print_r($_FILES));
     $target_file = $target_dir . basename($_FILES["profilpic"]["name"]);
     $absoluteTargetDir = __DIR__.'/../'.$target_file;
-die($target_file);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+    $sql = "INSERT INTO tbl_pic (pic) VALUES (?)";
+    $param = $target_file;
+
+    $dbClass->query_execute($sql, [$param]);
 
     if(isset($_POST["submit"])){
         $check = getimagesize($_FILES["profilpic"]["tmp_name"]);

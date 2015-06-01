@@ -8,8 +8,7 @@ class Database
     private static $instance = null;
     protected $mysqli;
 
-    function __construct()
-    {
+    function __construct() {
         $this->mysqli = $this->connect();
         if($this->mysqli->connect_error) {
             die('Connect Error (' . $this->mysqli->connect_errno . ') ' . $this->mysqli->connect_error);
@@ -18,32 +17,33 @@ class Database
         return $this->mysqli;
     }
 
-    function __destruct()
-    {
+    function __destruct() {
         return $this->mysqli->close();
     }
 
-    protected function connect()
-    {
-        return new mysqli(config()['database']['host'], config()['database']['username'] , config()['database']['password'] , config()['database']['name']);
+    protected function connect() {
+        if (null === $this->mysqli) {
+            $this->mysqli = new mysqli(config()['database']['host'], config()['database']['username'], config()['database']['password'], config()['database']['name']);
+        }
+
+        return $this->mysqli;
     }
 
-    public static function getInstance()
-    {
+    public static function getInstance() {
         if(!self::$instance)
             self::$instance = new self();
         return self::$instance;
     }
 
-    public function query_execute($sql, $params = [])
-    {
+    public function query_execute($sql, $params = []) {
         $stmt = $this->mysqli->prepare($sql);
 
-        if($stmt === false)
+        if($stmt === false) {
+            die($sql);
             return false;
+        }
 
-        if(count($params) !== 0)
-        {
+        if(count($params) !== 0) {
             $bind_types = '';
             $a_params = [];
             foreach($params as $param)
@@ -59,12 +59,15 @@ class Database
             }
             call_user_func_array(array($stmt, 'bind_param'), $a_params);
         }
-        $stmt->execute();
+        $success = $stmt->execute();
+        if(false === $success){
+            die($stmt->error);
+            //$this->error();
+        }
         return $stmt->get_result();
     }
 
-    private function bindType($param)
-    {
+    private function bindType($param) {
         if(is_string($param))
             return 's';
         elseif(is_integer($param))
@@ -75,18 +78,15 @@ class Database
             return '';
     }
 
-    public function error_execute()
-    {
-        return var_dump($this->mysqli->error);
+    public function error_execute() {
+        var_dump($this->mysqli->error);
     }
 
-    public static function error()
-    {
-        return self::getInstance()->error_execute();
+    public static function error() {
+        self::getInstance()->error_execute();
     }
 
-    public static function query($sql, $params = [])
-    {
+    public static function query($sql, $params = []) {
         return self::getInstance()->query_execute($sql, $params);
     }
 }
