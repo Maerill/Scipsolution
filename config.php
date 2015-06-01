@@ -7,7 +7,7 @@ function config()
 		'defaultpage' => 'login',
 		'database' => [
 			'name' => "scip",
-			'username' => "scip",
+			'username' => "dbadmin",
 			'password' => "Scip12345",
 			'host' => '127.0.0.1',
 		]

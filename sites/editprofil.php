@@ -39,7 +39,7 @@
 <div class="row">
 	<div class="profil-uploaddiv">
 		<div class="profil-uploadbtn">
-		<form action="function/uploadPic.php" method="post" enctype='multipart/form-data'>
+		<form action="functions/uploadPic.php" method="post" enctype='multipart/form-data'>
 			<input type="file" name="profilpic" id="profilpic">
 			<button type="submit" name="submit" class="btn btn-primary">Upload Profilpic</button>
 		</form>

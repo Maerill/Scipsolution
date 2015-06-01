@@ -1,4 +1,6 @@
 <?php
+    require_once(__DIR__."/../classes/database.php");
+
     $dbClass = new Database();
 
     die($dbClass);
@@ -7,7 +9,7 @@
 //die(print_r($_FILES));
     $target_file = $target_dir . basename($_FILES["profilpic"]["name"]);
     $absoluteTargetDir = __DIR__.'/../'.$target_file;
-//die($target_file);
+die($target_file);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
