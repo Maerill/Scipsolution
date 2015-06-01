@@ -1,3 +1,264 @@
-h1{
+/*::selection {
+	background-color: #F800FF;
+	text-shadow: none; 
+}
+
+::-moz-selection {
+	background-color: #F800FF;
+	text-shadow: none;
+}
+*/
+html, body {
+	height: 100%;
+}
+
+a {
+	color: #2EC4FF !important;
+}
+
+.right {
+	float: right;
+}
+
+.fontcolorwhite {
+	color: #FFFFFF;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.navbar-scip {
+	font-weight: bold;
+	padding-left: 0px !important;
+}
+
+.navbar-linkbutton {
+	color: #FFFFFF !important;
+}
+
+.header {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	margin-bottom: 40px;
+	text-align: left;
+	background-color: #2EC4FF;
+}
+
+.header-title {
+	display: inline-block;
+	font-size: 60px;
+	color: #FFFFFF;
+	margin-bottom: 15px;
+}
+
+.header-pic {
+	width: 200px;
+	float: right;
+}
+
+.header-paragraph{
+	color: #0EFCFF;
 	font-size: 30px;
+	width: 760px;
+	clear: both;
+}
+
+.content {
+	padding-bottom: 200px;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+}
+
+.footer {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-top: 50px;
+	color: #777777;
+	text-align: center;
+	border-top: 1px solid #e5e5e5;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.footer-links {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.footer-links li {
+	display: inline-block;
+}
+
+.login-picture {
+	width: 201px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+
+.login-form {
+	width: 62%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.login-heigth {
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 15px;
+}
+
+.login-heigth .form-group label {
+	padding-left: 0;
+}
+
+.login-heigth .form-group div {
+	padding-right: 0;
+}
+
+.login-loginbutton {
+	width: 102px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.register-label {
+	width: 25%;
+	display: inline-block;
+}
+
+.register-label label {
+	float: none !important;
+	display: block;
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 15px;
+}
+
+.register-inputs {
+	width: 74%;
+	float: right;
+}
+
+.register-inputs input {
+	margin-bottom: 15px;
+}
+
+.register-radio {
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 15px;
+}
+
+.register-registerbutton {
+	width: 144px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profil-wrapper {
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+	margin-bottom: 50px;
+}
+
+.profil-label {
+	width: 30%;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+.profil-label label {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.profil-inputs {
+	width: 60%;
+	float: right;
+	padding-right: 10px;
+}
+
+.profil-inputs input {
+	margin-bottom: 10px;
+}
+
+.profil-radio {
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.profil-profilpic {
+	width: 215px;
+	display: table-cell;
+	margin-right: 10px;
+	padding-left: 30px;
+}
+
+.profil-userinfo {
+	display: table-cell;
+	width: 90%;
+	min-width: 300px;
+	vertical-align: top;
+}
+
+.profil-picture {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profil-mostLiked {
+	width: 200px;
+	display: table-cell;
+}
+
+.profil-editbutton {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.profil-editbutton a {
+	color: #FFFFFF !important;
+}
+
+.profil-piccollegtion {
+	width: 100%;
+	min-width: 1170px;
+	margin-left: 15px;
+}
+
+.profil-inlineblock {
+	padding:0 !important;
+	display: inline-block;
+	width: 200px;
+	margin-right: 30px;
+}
+
+.profil-heading {
+	margin-left: 15px;
+}
+
+.overview-piccollegtion {
+	width: 100%;
+	min-width: 1170px;
+	margin-left: 15px;
+}
+
+.overview-inlineblock {
+	padding:0 !important;
+	display: inline-block;
+	width: 200px;
+	margin-right: 30px;
+}
+
+.overview-heading {
+	margin-left: 15px;
 }
