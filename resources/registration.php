@@ -13,6 +13,7 @@ require_once(__DIR__.'/../db/user.php');
 //Header setzen
 header("Content-Type: text/html; charset=utf-8");
 
+
 //Wenn kein Session Variable Login gesetzt wurde, dann wird 0 gesetzt
 if(!isset($_SESSION['login'])){
 	$_SESSION['login'] = 0;

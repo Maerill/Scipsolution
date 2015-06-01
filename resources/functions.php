@@ -11,7 +11,7 @@ function bild_upload($bild){
 		|| ($bild["type"][$i] == "image/pjpeg")
 		|| ($bild["type"][$i] == "image/x-png")
 		|| ($bild["type"][$i] == "image/png"))
-		&& ($bild["size"][$i] < 10000000)) //Maximal 10MB pro Bild
+		&& ($bild["size"][$i] < 20000000)) //Maximal 20MB pro Bild
 		  {
 			//Errors ausgeben
 		  if ($bild["error"][$i] > 0)
