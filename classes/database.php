@@ -1,6 +1,6 @@
 <?php
-
-/**
+    require_once(__DIR__."/../config.php");
+/*
 * Database Class
 */
 class Database
@@ -12,7 +12,7 @@ class Database
     {
         $this->mysqli = $this->connect();
         if($this->mysqli->connect_error) {
-            die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+            die('Connect Error (' . $this->mysqli->connect_errno . ') ' . $this->mysqli->connect_error);
         }
 
         return $this->mysqli;

@@ -163,7 +163,7 @@ a {
 	width: 100%;
 	display: table;
 	border-collapse: collapse;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 .profil-label {
@@ -244,6 +244,30 @@ a {
 
 .profil-heading {
 	margin-left: 15px;
+}
+
+.profil-uploaddiv {
+	width: 200px;
+	margin-left: 30px;
+	float: left;
+}
+
+.profil-uploadbtn {
+	width: 130px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profil-savediv {
+	width: 200px;
+	margin-right: 30px;
+	float: right;
+}
+
+.profil-savebtn {
+	width: 130px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .overview-piccollegtion {

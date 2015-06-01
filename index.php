@@ -6,7 +6,7 @@ Startpage, every other page gets loaded in.
   session_start();
   // load files
   require_once(__DIR__.'/config.php');
-  require_once(__DIR__.'/db/database.php');
+  require_once(__DIR__.'/classes/database.php');
   require_once(__DIR__.'/db/user.php');
 
   // set charset
