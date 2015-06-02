@@ -24,19 +24,20 @@
 		    <label for="birthday" class="control-label">Birthday:</label>
 	  	</div>
 		<div class="profil-inputs">
-		  <form class="form-group">
+		  <form class="form-group" id="userinfo" action="functions/updateProfil.php" method="post">
 		    <input type="text" class="form-control input-sm" />
 		    <input type="email" class="form-control input-sm" />
 		    <div class="profil-radio">
 		      <label class="radio-inline">
-		        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male"> Male
+		        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male" /> Male
 		      </label>
 		      <label class="radio-inline">
-		        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female"> Female
+		        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female" /> Female
 		      </label>
 		    </div>
-		    <input type="tel" class="form-control input-sm">
-		    <input type="date" class="form-control input-sm">
+		    <input type="tel" class="form-control input-sm" />
+		    <input type="date" class="form-control input-sm" />
+            <input type="submit" class="hidden" id="submit-userInfo"/>
 		  </form>
 		</div>
 	</div>
@@ -48,16 +49,15 @@
 <div class="row">
 	<div class="profil-uploaddiv">
 		<div class="profil-uploadbtn">
-		<form action="functions/uploadPic.php" method="post" enctype='multipart/form-data'>
-			<input type="file" name="profilpic" id="profilpic">
-			<button type="submit" name="submit" class="btn btn-primary">Upload Profilpic</button>
-		</form>
-			
+            <form class="form-group" action="functions/uploadPic.php" method="post" enctype='multipart/form-data'>
+                <input type="file" name="profilpic" id="profilpic">
+                <button type="submit" name="submit" class="btn btn-primary">Upload Profilpic</button>
+            </form>
 		</div>
 	</div>
 	<div class="profil-savediv">
 		<div class="profil-savebtn">
-			<button type="button" class="btn btn-primary">Save Profilinfo</button>
+			<label class="btn btn-primary" for="submit-userInfo">Save Profilepic</label>
 		</div>
 	</div>
 </div>
