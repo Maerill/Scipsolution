@@ -1,38 +1,48 @@
 <?php
 /*
- * Class Profilpic
+ * Class picLoader
  */
 
 class picLoader {
 
-    public function getProfilPicByCurrentUser(Database $dbconnection, $user) {
-        $sqlPicId = "SELECT profilPicId FROM tbl_users WHERE id=?";
-        $paramsPicId = $user;
-        $profilPicId = $dbconnection->query_execute($sqlPicId, $paramsPicId);
+    private $database;
 
-        $sqlProfilPicPath = "SELECT p.picPath FROM tbl_pic p LEFT JOIN tbl_users u ON u.id = p.userId WHERE u.id=? AND p.id=?";
-        $paramsPic = [$user, $profilPicId];
-        $profilPic = $dbconnection->query_execute($sqlProfilPicPath, $paramsPic);
-
-        return $profilPic;
+    public function __construct(Database $database)
+    {
+        $this->database = $database;
     }
 
-    public function getAllPicsOffUser(Database $dbconnection, $user) {
+    public function getProfilePicByUser($userId) {
+        $sqlPicId = "SELECT profilPicId FROM tbl_users WHERE id=?";
+        $result = $this->database->query_execute($sqlPicId, [$userId]);
+
+        if(isset($result->profilPicId)) {
+            $profilePicId = $result->profilPicId;
+            $sqlProfilePicPath = "SELECT picPath FROM tbl_pic WHERE id=?";
+            $profilePic = $this->database->query_execute($sqlProfilePicPath, $profilePicId);
+
+            return $profilePic->picPath;
+        }
+
+        return null;
+    }
+
+    public function getAllPicsOffUser($userId) {
 
         $sql = "SELECT picPath FROM tbl_pic WHERE userId=?";
-        $params = $user;
-        $allPics = $dbconnection->query_execute($sql, $params);
+        $allPics = $this->database->query_execute($sql, $userId);
 
-        foreach($allPics as $pic){
-            $arrayPic = array_fill(0,1,$pic);
+        while ($row = $allPics->fetch_object())
+        {
+            $arrayPic = array_fill(0,1,$row);
         }
 
         return $arrayPic;
     }
 
-    public function getAllPics(Database $dbconnection){
+    public function getAllPics(){
         $sql = "SELECT picPath FROM tbl_pic";
-        $allPics = $dbconnection->query_execute($sql);
+        $allPics = $this->database->query_execute($sql);
 
         foreach($allPics as $pic){
             $arrayPic = array_fill(0,1,$pic);

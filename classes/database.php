@@ -38,31 +38,37 @@ class Database {
         $stmt = $this->mysqli->prepare($sql);
 
         if($stmt === false) {
-            die($sql);
             return false;
         }
 
+
         if(count($params) !== 0) {
+            $params = is_array($params) ? $params : [$params];
             $bind_types = '';
             $a_params = [];
-            foreach($params as $param)
-                $bind_types .= $this->bindType($param);
 
+            foreach($params as $param) {
+                $bind_types .= $this->bindType($param);
+            }
             $a_params[] = $bind_types;
 
-            foreach($params as $param)
-            {
-                $param_name = 'bind.'.$param;
+            foreach($params as $param) {
+                if (is_object($param)) {
+                    var_dump($param);
+                    throw new \Exception();
+                }
+                $paramString = (string)$param;
+                $param_name = 'bind.'.$paramString;
                 $$param_name = $param;
                 $a_params[] = &$$param_name;
             }
-            call_user_func_array(array($stmt, 'bind_param'), $a_params);
+
+            call_user_func_array(array($stmt, 'bind_param'),$a_params);
         }
-        $success = $stmt->execute();
-        if(false === $success){
-            die($stmt->error);
-        }
-        return $stmt->get_result();
+
+        $stmt->execute();
+
+        return $stmt->get_result()->fetch_object();
     }
 
     private function bindType($param) {

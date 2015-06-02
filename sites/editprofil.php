@@ -3,18 +3,17 @@
     require_once("classes/picLoader.php");
 
     $dbClass = new Database();
-    $sessionUser = $_SESSION['user'];
-    //die($sessionUser);
+    $picLoaderClass = new picLoader($dbClass);
+    //$sessionUser = $_SESSION['user'];
 
-    $picLoaderClass = new picLoader();
-    $profilPic = $picLoaderClass->getProfilPicByCurrentUser($dbClass, $sessionUser);
 
-    $allPics = $picLoaderClass->getAllPicsOffUser($dbClass, $sessionUser);
+    $profilePic = $picLoaderClass->getProfilePicByUser(2);
+    //$allPics = $picLoaderClass->getAllPicsOffUser(1);
 ?>
 
 <div class="row profil-wrapper">
 	<div class="profil-profilpic">
-		<img src="<?php $profilPic ?>" width="200">
+		<img src="<?php echo $profilePic ?>" width="200">
 	</div>
 	<div class="profil-userinfo">
 		<div class="profil-label">
@@ -65,7 +64,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="profil-heading">
-			<h1>Your latest Pics</h1>
+			<h1>Your Pics</h1>
 		</div>
 		<div class="profil-piccollegtion">
 			<div class="profil-inlineblock">
