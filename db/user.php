@@ -1,10 +1,13 @@
 <?php
+
+require_once(__DIR__.'/../classes/database.php');
+
 /**
  * @param array $data Array containing needed user information
  */
 function insert_user($data){
 	$sql = 'INSERT INTO tbl_users(username, password, mail, gender, birthday, phonenumber) VALUES(?,?,?,?,?,?)';
-
+	var_dump($data);
 	return Database::query($sql, [
 		$data['username'],
 		password_hash($data['password'], PASSWORD_BCRYPT),
@@ -14,6 +17,8 @@ function insert_user($data){
 		$data['phonenumber'],
 	]);
 }
+
+var_dump(Database::error());
 
 function get_user($data) {
 	if(is_integer($data))
