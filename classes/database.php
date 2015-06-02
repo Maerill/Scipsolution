@@ -3,8 +3,7 @@
 /*
 * Database Class
 */
-class Database
-{
+class Database {
     private static $instance = null;
     protected $mysqli;
 
@@ -62,7 +61,6 @@ class Database
         $success = $stmt->execute();
         if(false === $success){
             die($stmt->error);
-            //$this->error();
         }
         return $stmt->get_result();
     }
