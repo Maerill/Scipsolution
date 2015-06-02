@@ -1,4 +1,6 @@
 <?php
+/*
+
 //Bild-Upload Funktion
 function bild_upload($bild){
 	for($i=0;$i<count($bild['name']);$i++){
@@ -37,7 +39,7 @@ function bild_upload($bild){
 				
 				/******************THUMBNAIL******************/
 				
-				$PicPathIn="upload/"; // Pfad Original Bilder 
+				/*$PicPathIn="upload/"; // Pfad Original Bilder 
 				$PicPathOut="upload/thumbnail/"; // Pfad kleine Bilder? Chmod 777 !!
 				$picbreite = 450; // 100 Pixel soll Bild breit sein
 				$thumbnail_name = $picture_name[0] . "." . $extension; 
@@ -129,4 +131,4 @@ function time_elapsed($secs){
 		return join(' ', $ret);
 	}
 }
-?>
+?>*/
