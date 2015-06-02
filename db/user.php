@@ -7,6 +7,7 @@ require_once(__DIR__.'/../classes/database.php');
  */
 function insert_user($data){
 	$sql = 'INSERT INTO tbl_users(username, password, mail, gender, birthday, phonenumber) VALUES(?,?,?,?,?,?)';
+	
 	return Database::query($sql, [
 		$data['username'],
 		password_hash($data['password'], PASSWORD_BCRYPT),
