@@ -1,3 +1,10 @@
+<?php
+require_once(__DIR__.'/../classes/database.php');
+//Profileinformation
+$query = Database::query("select * from tbl_users where username='" . $_SESSION['user_name'] . "'");
+?>
+
+
 <div class="row profil-editbutton">
 	<a href="?site=editprofil" class="btn btn-primary btn-sm right" role="button">Edit profil</a>
 </div>
@@ -16,18 +23,11 @@
 	  	</div>
 		<div class="profil-inputs">
 		  <fieldset disabled>
-		    <input type="text" class="form-control input-sm">
-		    <input type="email" class="form-control input-sm">
-		    <div class="profil-radio">
-		      <label class="radio-inline">
-		        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male"> Male
-		      </label>
-		      <label class="radio-inline">
-		        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female"> Female
-		      </label>
-		    </div>
-		    <input type="tel" class="form-control input-sm">
-		    <input type="date" class="form-control input-sm">
+		    <p class="form-control input-sm"><?php echo $query->username; ?></p><br/> 
+		    <p class="form-control input-sm"><?php echo $query->mail; ?></p><br/> 
+		    <p class="form-control input-sm"><?php if($query->gender == 1){echo"Male";}else{echo"Female";} ?></p><br/> 
+		    <p class="form-control input-sm"><?php echo $query->phonenumber; ?></p><br/> 
+		    <p class="form-control input-sm"><?php echo $query->birthday; ?></p><br/> 
 		  </fieldset>
 		</div>
 	</div>

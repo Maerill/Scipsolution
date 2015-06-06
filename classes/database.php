@@ -68,7 +68,11 @@ class Database {
 
         $stmt->execute();
 
-        return $stmt->get_result()->fetch_object();
+        $result = $stmt->get_result()->fetch_object();
+        if($result)
+            return $result;
+        else
+            return self::error();
     }
 
     private function bindType($param) {

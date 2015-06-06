@@ -18,7 +18,8 @@ function insert_user($data){
 	]);
 }
 
-var_dump(Database::error());
+//var_dump(Database::error());
+
 
 function get_user($data) {
 	if(is_integer($data))

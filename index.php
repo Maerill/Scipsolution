@@ -7,11 +7,14 @@ Startpage, every other page gets loaded in.
   // load files
   require_once(__DIR__.'/config.php');
   require_once(__DIR__.'/classes/database.php');
-  require_once(__DIR__.'/db/user.php');
-
+  require_once(__DIR__.'/functions/userFunction.php');	
   // set charset
   header("Content-Type: text/html; charset=utf-8");
 
+  
+  // Check if Session already exist
+
+  
   // USER ERSTELLEN!
   /*
   var_dump(insert_user([
