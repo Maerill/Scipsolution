@@ -271,6 +271,17 @@ a {
 	margin-right: auto;
 }
 
+.profil-uploadpicdiv {
+	width: 200px;
+	margin-left: 41%;
+}
+
+.profil-uploadpicbtn {
+	width: 130px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .overview-piccollegtion {
 	width: 100%;
 	min-width: 1170px;

@@ -57,7 +57,13 @@
 	</div>
 	<div class="profil-savediv">
 		<div class="profil-savebtn">
-			<label class="btn btn-primary" for="submit-userInfo">Save Profilepic</label>
+			<button type="submit" name="submit" class="btn btn-primary" for="submit-userInfo">Save Profil</button>
+		</div>
+	</div>
+	<div class="profil-uploadpicdiv">
+		<div class="profil-uploadpicbtn">
+                <input type="file" name="pics" id="pics">
+                <button type="submit" name="submit" class="btn btn-primary">Upload Pic</button>
 		</div>
 	</div>
 </div>

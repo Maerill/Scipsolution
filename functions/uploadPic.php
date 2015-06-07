@@ -30,7 +30,7 @@
         $uploadOk = 0;
     }
 
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG") {
         echo "Sorry, only JPG, JPEG & PNG files are allowed.";
         $uploadOk = 0;
     }
