@@ -11,6 +11,9 @@
 
     $user = $dbClass->query_execute($sql, [$username]);
     $profilePic = $picLoaderClass->getProfilePicByUser($user->id);
+
+    $sqlUserInfo = "SELECT username, mail, gender, phonenumber, birthday FROM tbl_users WHERE id=?";
+    $userInfo = $dbClass->query_execute($sqlUserInfo, [$user->id])
     //$allPics = $picLoaderClass->getAllPicsOffUser(1);
 ?>
 
@@ -28,33 +31,33 @@
         </div>
         <div class="profil-inputs">
             <form class="form-group" action="functions/uploadProfil.php" method="post">
-                <input type="text" name="username" class="form-control input-sm" />
-                <input type="email" name="mail" class="form-control input-sm" />
+                <input type="text" name="username" class="form-control input-sm" value="<?php echo $userInfo->username ?>" />
+                <input type="email" name="mail" class="form-control input-sm" value="<?php echo $userInfo->mail ?>" />
                 <div class="profil-radio">
                     <label class="radio-inline">
-                        <input type="radio" name="RadioMale" id="inlineRadio1" value="1" /> Male
+                        <input type="radio" name="RadioOption" value="1" <?php if($userInfo->gender == 1){echo "checked";} ?> /> Male
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="RadioFemale" id="inlineRadio2" value="2" /> Female
+                        <input type="radio" name="RadioOption" value="2" <?php if($userInfo->gender == 2){echo "checked";} ?> /> Female
                     </label>
                 </div>
-                <input type="tel" name="phonenumber" class="form-control input-sm" />
-                <input type="date" name="birthday" class="form-control input-sm" />
+                <input type="tel" name="phonenumber" class="form-control input-sm"  value="<?php echo $userInfo->phonenumber ?>" />
+                <input type="date" name="birthday" class="form-control input-sm" value="<?php echo $userInfo->birthday ?>" />
                 <input type="submit" name="saveProfile" class="hidden" id="submit-userInfo"/>
             </form>
         </div>
     </div>
     <div class="profil-mostLiked">
         <?php // load most liked pic ?>
-        <img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
+        <img class="" src="pics/defaultProfilePic.png" width="200">
     </div>
 </div>
 <div class="row">
     <div class="profil-uploaddiv">
         <div class="profil-uploadbtn">
             <form class="form-group" action="functions/uploadProfilePic.php" method="post" enctype='multipart/form-data'>
-                <input type="file" name="profilpic" id="profilpic">
-                <button type="submit" name="submit" class="btn btn-primary">Upload Profilepic</button>
+                <input type="file" name="profilpic" />
+                <button type="submit" name="submitProfilePic" class="btn btn-primary">Upload Profilepic</button>
             </form>
         </div>
     </div>
@@ -65,8 +68,14 @@
     </div>
     <div class="profil-uploadpicdiv">
         <div class="profil-uploadpicbtn">
-            <input type="file" name="pics" id="pics">
-            <button type="submit" name="submit" class="btn btn-primary">Upload Pic</button>
+            <form class="form-group" action="functions/uploadPic.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="pic" />
+                <?php if(count($_FILES) == 0 OR $_FILES['pic']['name'] == '' OR $_FILES['pic']['size'] == 0){ ?>
+                    <button type="submit" name="submitPic" class="btn btn-primary">Upload Pic</button>
+                <?php }else{ ?>
+                    <button type="submit" name="submitPic" class="btn btn-primary">Upload Pic</button>
+                <?php } ?>
+            </form>
         </div>
     </div>
 </div>
