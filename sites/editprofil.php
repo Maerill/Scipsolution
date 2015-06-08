@@ -30,7 +30,7 @@
 		    <label for="birthday" class="control-label">Birthday:</label>
 	  	</div>
 		<div class="profil-inputs">
-		  <form class="form-group" id="userinfo" action="functions/updateProfil.php" method="post">
+		  <form class="form-group" id="submit-userinfo" action="functions/updateProfil.php" method="post">
 		    <input type="text" class="form-control input-sm" />
 		    <input type="email" class="form-control input-sm" />
 		    <div class="profil-radio">
