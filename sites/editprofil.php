@@ -7,12 +7,17 @@
 
     $username = $_SESSION['user_name'];
 
+
     $sql = "SELECT id FROM tbl_Users WHERE username=?";
 
     $userId = $dbClass->query_execute($sql, [$username]);
 
     $profilePic = $picLoaderClass->getProfilePicByUser($userId->id);
     //$allPics = $picLoaderClass->getAllPicsOffUser(1);
+
+	$sqlall = "select * from tbl_users where username=?";
+
+	$query = $dbClass->query_execute($sqlall, $username);
 ?>
 
 <div class="row profil-wrapper">
@@ -20,30 +25,27 @@
 		<img src="<?php echo $profilePic ?>" width="200">
 	</div>
 	<div class="profil-userinfo">
-		<div class="profil-label">
-			<label for="username" class="control-label">Username:</label>
-		    <label for="email" class="control-label">Email:</label>
-		    <label for="gender" class="control-label">Gender:</label>
-		    <label for="phonenumber" class="control-label">Phonenumber:</label>
-		    <label for="birthday" class="control-label">Birthday:</label>
-	  	</div>
-		<div class="profil-inputs">
-		  <form class="form-group" id="userinfo" action="functions/updateProfil.php" method="post">
-		    <input type="text" class="form-control input-sm" />
-		    <input type="email" class="form-control input-sm" />
-		    <div class="profil-radio">
-		      <label class="radio-inline">
-		        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male" /> Male
-		      </label>
-		      <label class="radio-inline">
-		        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female" /> Female
-		      </label>
-		    </div>
-		    <input type="tel" class="form-control input-sm" />
-		    <input type="date" class="form-control input-sm" />
-            <input type="submit" class="hidden" id="submit-userInfo"/>
-		  </form>
-		</div>
+			<div class="profil-label">
+				<label for="username" class="control-label">Username:</label>
+			    <label for="email" class="control-label">Email:</label>
+			    <label for="gender" class="control-label">Gender:</label>
+			    <label for="phonenumber" class="control-label">Phonenumber:</label>
+			    <label for="birthday" class="control-label">Birthday:</label>
+		  	</div>
+			<div class="profil-inputs">
+			  	<input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?>" />
+			    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?>" />
+
+		      	<label class="radio-inline">
+		        	<input type="radio" name="gender" id="male" value="1" <?php if ($query === null) {return;} else { if($query->gender == 1){  ?> checked <?php }}?>> Male
+		      	</label>
+		      	<label class="radio-inline">
+		       		<input type="radio" name="gender" id="female" value="2" <?php if ($query === null) {return;} else { if($query->gender == 2){  ?> checked <?php }}?>> Female
+		      	</label>
+
+			    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?>" />
+			    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?>" />
+			</div>
 	</div>
 	<div class="profil-mostLiked">
 		<?php // load most liked pic ?>
@@ -61,13 +63,13 @@
 	</div>
 	<div class="profil-savediv">
 		<div class="profil-savebtn">
-			<button type="submit" name="submit" class="btn btn-primary" for="submit-userInfo">Save Profil</button>
+			<button type="submit" action="functions/saveProfil" name="submit" class="btn btn-primary" for="submit-userInfo">Save Profil</button>
 		</div>
 	</div>
 	<div class="profil-uploadpicdiv">
 		<div class="profil-uploadpicbtn">
-                <input type="file" name="pics" id="pics">
-                <button type="submit" name="submit" class="btn btn-primary">Upload Pic</button>
+            <input type="file" name="pics" id="pics">
+            <button type="submit" name="submit" class="btn btn-primary">Upload Pic</button>
 		</div>
 	</div>
 </div>
