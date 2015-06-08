@@ -19,7 +19,7 @@ class picLoader {
         if(isset($result->profilPicId)) {
             $profilePicId = $result->profilPicId;
             $sqlProfilePicPath = "SELECT picPath FROM tbl_pic WHERE id=?";
-            $profilePic = $this->database->query_execute($sqlProfilePicPath, $profilePicId);
+            $profilePic = $this->database->query_execute($sqlProfilePicPath, [$profilePicId]);
 
             return $profilePic->picPath;
         }

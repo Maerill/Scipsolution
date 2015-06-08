@@ -4,10 +4,14 @@
 
     $dbClass = new Database();
     $picLoaderClass = new picLoader($dbClass);
-    //$sessionUser = $_SESSION['user'];
 
+    $username = $_SESSION['user_name'];
 
-    $profilePic = $picLoaderClass->getProfilePicByUser(2);
+    $sql = "SELECT id FROM tbl_Users WHERE username=?";
+
+    $userId = $dbClass->query_execute($sql, [$username]);
+
+    $profilePic = $picLoaderClass->getProfilePicByUser($userId->id);
     //$allPics = $picLoaderClass->getAllPicsOffUser(1);
 ?>
 
@@ -51,7 +55,7 @@
 		<div class="profil-uploadbtn">
             <form class="form-group" action="functions/uploadPic.php" method="post" enctype='multipart/form-data'>
                 <input type="file" name="profilpic" id="profilpic">
-                <button type="submit" name="submit" class="btn btn-primary">Upload Profilpic</button>
+                <button type="submit" name="submit" class="btn btn-primary">Upload Profilepic</button>
             </form>
 		</div>
 	</div>

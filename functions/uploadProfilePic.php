@@ -9,13 +9,21 @@
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
-    $sqlInsertPic = "INSERT INTO tbl_pic(picPath, userId) VALUES (?, ?)";
-    session_start();
-    $username = $_SESSION['user_name'];
-    $sqlUser = "SELECT id FROM tbl_Users WHERE username=?";
-    $userId = $dbClass->query_execute($sqlUser, [$username]);
+    $sql = "INSERT INTO tbl_pic (pic) VALUES (?)";
+    $param = $target_file;
 
-    $dbClass->query_execute($sqlInsertPic, [$target_file, $userId->id]);
+    $dbClass->query_execute($sql, [$param]);
+
+    $sqlGetPicId = "SELECT id FROM tbl_pic WHERE picPath=?";
+
+    $picId = $dbClass->query_execute($sqlGetPicId,[$target_file]);
+
+    $sqlUpdateUser = "UPDATE tbl_Users SET profilePicId=? WHERE id=?";
+    session_start();
+    $userId = $_SESSION['user_name'];
+    $paramsUpdate = [$picId, $userId];
+
+    $dbClass->query_execute($sqlUpdateUser, $paramsUpdate);
 
     if(isset($_POST["submit"])){
         $check = getimagesize($_FILES["profilpic"]["tmp_name"]);
@@ -47,4 +55,3 @@
             echo "Sorry, there was an error uploading your file.";
         }
     }
-?>

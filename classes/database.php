@@ -72,7 +72,9 @@ class Database {
         if($result)
             return $result;
         else
-            return self::error();
+            self::error();
+
+        return null;
     }
 
     private function bindType($param) {
@@ -87,7 +89,10 @@ class Database {
     }
 
     public function error_execute() {
-        var_dump($this->mysqli->error);
+        if (!empty($this->mysqli->error)) {
+            var_dump($this->mysqli->error);
+            die;
+        }
     }
 
     public static function error() {
