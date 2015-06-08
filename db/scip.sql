@@ -37,17 +37,6 @@ CREATE TABLE IF NOT EXISTS `tbl_pic` (
   `userId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tbl_pic`
---
-
-INSERT INTO `tbl_pic` (`id`, `picPath`, `likes`, `dislikes`, `comments`, `userId`) VALUES
-(1, 'pics/defaultProfilPic.png', NULL, NULL, NULL, 1),
-(2, 'pics/Desert.jpg', NULL, NULL, NULL, 1),
-(3, 'pics/Jellyfish.jpg', NULL, NULL, NULL, 1),
-(4, 'pics/logo.png', NULL, NULL, NULL, 1),
-(5, 'pics/Hydrangeas.jpg', NULL, NULL, NULL, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -64,13 +53,6 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `birthday` date DEFAULT NULL,
   `phonenumber` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tbl_users`
---
-
-INSERT INTO `tbl_users` (`id`, `username`, `password`, `mail`, `profilPicId`, `gender`, `birthday`, `phonenumber`) VALUES
-(1, 'mario', 'Scip12345', NULL, 2, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables

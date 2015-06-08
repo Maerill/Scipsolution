@@ -21,26 +21,26 @@
     <div class="profil-userinfo">
         <div class="profil-label">
             <label for="username" class="control-label">Username:</label>
-            <label for="email" class="control-label">Email:</label>
+            <label for="mail" class="control-label">Email:</label>
             <label for="gender" class="control-label">Gender:</label>
             <label for="phonenumber" class="control-label">Phonenumber:</label>
             <label for="birthday" class="control-label">Birthday:</label>
         </div>
         <div class="profil-inputs">
-            <form class="form-group" id="userinfo" action="functions/updateProfil.php" method="post">
-                <input type="text" class="form-control input-sm" />
-                <input type="email" class="form-control input-sm" />
+            <form class="form-group" action="functions/uploadProfil.php" method="post">
+                <input type="text" name="username" class="form-control input-sm" />
+                <input type="email" name="mail" class="form-control input-sm" />
                 <div class="profil-radio">
                     <label class="radio-inline">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male" /> Male
+                        <input type="radio" name="RadioMale" id="inlineRadio1" value="1" /> Male
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female" /> Female
+                        <input type="radio" name="RadioFemale" id="inlineRadio2" value="2" /> Female
                     </label>
                 </div>
-                <input type="tel" class="form-control input-sm" />
-                <input type="date" class="form-control input-sm" />
-                <input type="submit" class="hidden" id="submit-userInfo"/>
+                <input type="tel" name="phonenumber" class="form-control input-sm" />
+                <input type="date" name="birthday" class="form-control input-sm" />
+                <input type="submit" name="saveProfile" class="hidden" id="submit-userInfo"/>
             </form>
         </div>
     </div>
@@ -60,7 +60,7 @@
     </div>
     <div class="profil-savediv">
         <div class="profil-savebtn">
-            <button type="submit" name="submit" class="btn btn-primary" for="submit-userInfo">Save Profil</button>
+            <label class="btn btn-primary" for="submit-userInfo">Save Profile</label>
         </div>
     </div>
     <div class="profil-uploadpicdiv">
