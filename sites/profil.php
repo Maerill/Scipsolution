@@ -1,7 +1,13 @@
 <?php
 require_once(__DIR__.'/../classes/database.php');
 //Profileinformation
-$query = Database::query("select * from tbl_users where username='" . $_SESSION['user_name'] . "'");
+$dbCon = new Database();
+
+$userName = $_SESSION['user_name'];
+
+$sql = "select * from tbl_users where username=?";
+
+$query = $dbCon->query_execute($sql, $userName);
 ?>
 
 
@@ -23,11 +29,11 @@ $query = Database::query("select * from tbl_users where username='" . $_SESSION[
 	  	</div>
 		<div class="profil-inputs">
 		  <fieldset disabled>
-		    <p class="form-control input-sm"><?php echo $query->username; ?></p><br/> 
-		    <p class="form-control input-sm"><?php echo $query->mail; ?></p><br/> 
-		    <p class="form-control input-sm"><?php if($query->gender == 1){echo"Male";}else{echo"Female";} ?></p><br/> 
-		    <p class="form-control input-sm"><?php echo $query->phonenumber; ?></p><br/> 
-		    <p class="form-control input-sm"><?php echo $query->birthday; ?></p><br/> 
+		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?></p><br/>
+		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?></p><br/> 
+		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Gender"; } else { if($query->gender == 1){echo"Male";}else{echo"Female";}} ?></p><br/> 
+		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?></p><br/> 
+		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?></p><br/> 
 		  </fieldset>
 		</div>
 	</div>
