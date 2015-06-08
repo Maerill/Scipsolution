@@ -32,19 +32,25 @@
 			    <label for="birthday" class="control-label">Birthday:</label>
 		  	</div>
 			<div class="profil-inputs">
-			  	<input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?>" />
-			    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?>" />
+				<form class="form-group" id="submit-userinfo" action="functions/updateProfil.php" method="post">
+				  	<input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?>" />
+				    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?>" />
 
-		      	<label class="radio-inline">
-		        	<input type="radio" name="gender" id="male" value="1" <?php if ($query === null) {return;} else { if($query->gender == 1){  ?> checked <?php }}?>> Male
-		      	</label>
-		      	<label class="radio-inline">
-		       		<input type="radio" name="gender" id="female" value="2" <?php if ($query === null) {return;} else { if($query->gender == 2){  ?> checked <?php }}?>> Female
-		      	</label>
+			      	<label class="radio-inline">
+			        	<input type="radio" name="gender" id="male" value="1" <?php if ($query === null) {return;} else { if($query->gender == 1){  ?> checked <?php }}?>> Male
+			      	</label>
+			      	<label class="radio-inline">
+			       		<input type="radio" name="gender" id="female" value="2" <?php if ($query === null) {return;} else { if($query->gender == 2){  ?> checked <?php }}?>> Female
+			      	</label>
 
-			    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?>" />
-			    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?>" />
+				    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?>" />
+				    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?>" />
+				    <input type="tel" class="form-control input-sm" />
+				    <input type="date" class="form-control input-sm" />
+		            <input type="submit" class="hidden" id="submit-userInfo"/>
+				</form>
 			</div>
+
 	</div>
 	<div class="profil-mostLiked">
 		<?php // load most liked pic ?>
