@@ -66,7 +66,6 @@ if (isset($_POST['submit_register'])) {
 		]);
 
 		if (!$query){
-			die("test");
 			var_dump(insert_user([
 				'username' => $username,
 				'password' => $password,
