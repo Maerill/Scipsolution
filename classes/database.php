@@ -57,7 +57,7 @@ class Database {
             return false;
         return $result->fetch_object();
     }
-    
+
     private function bindType($param) {
         if(is_string($param))
             return 's';

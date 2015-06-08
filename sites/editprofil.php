@@ -10,19 +10,18 @@
 
     $sql = "SELECT id FROM tbl_Users WHERE username=?";
 
-    $userId = $dbClass->query_execute($sql, [$username]);
-
-    $profilePic = $picLoaderClass->getProfilePicByUser($userId->id);
+    $user = $dbClass->query_execute($sql, [$username]);
+    $profilePic = $picLoaderClass->getProfilePicByUser($user->id);
     //$allPics = $picLoaderClass->getAllPicsOffUser(1);
 
-	$sqlall = "select * from tbl_users where username=?";
+	$sqlAll = "select * from tbl_users where username=?";
 
-	$query = $dbClass->query_execute($sqlall, $username);
+	$query = $dbClass->query_execute($sqlAll, $username);
 ?>
 
 <div class="row profil-wrapper">
 	<div class="profil-profilpic">
-		<img src="<?php echo $profilePic ?>" width="200">
+		<img src="<?php if($profilePic!==null){echo $profilePic;}else{echo "pics/defaultProfilePic.png";} ?>" width="200">
 	</div>
 	<div class="profil-userinfo">
 			<div class="profil-label">
@@ -55,7 +54,7 @@
 <div class="row">
 	<div class="profil-uploaddiv">
 		<div class="profil-uploadbtn">
-            <form class="form-group" action="functions/uploadPic.php" method="post" enctype='multipart/form-data'>
+            <form class="form-group" action="functions/uploadProfilePic.php" method="post" enctype='multipart/form-data'>
                 <input type="file" name="profilpic" id="profilpic">
                 <button type="submit" name="submit" class="btn btn-primary">Upload Profilepic</button>
             </form>
