@@ -9,21 +9,21 @@
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
-    $sql = "INSERT INTO tbl_pic (pic) VALUES (?)";
-    $param = $target_file;
-
-    $dbClass->query_execute($sql, [$param]);
-
-    $sqlGetPicId = "SELECT id FROM tbl_pic WHERE picPath=?";
-
-    $picId = $dbClass->query_execute($sqlGetPicId,[$target_file]);
-
-    $sqlUpdateUser = "UPDATE tbl_Users SET profilePicId=? WHERE id=?";
+    $sqlInsertPic = "INSERT INTO tbl_pic(picPath, userId) VALUES (?, ?)";
     session_start();
-    $userId = $_SESSION['user_name'];
-    $paramsUpdate = [$picId, $userId];
+    $username = $_SESSION['user_name'];
+    $sqlGetUser = "SELECT id FROM tbl_users WHERE username=?";
+    $user = $dbClass->query_execute($sqlGetUser, [$username]);
 
-    $dbClass->query_execute($sqlUpdateUser, $paramsUpdate);
+    $dbClass->query_execute($sqlInsertPic, [$target_file, $user->id]);
+
+    $sqlGetPicId = "SELECT id FROM tbl_pic WHERE picPath=? LIMIT 1";
+
+    $pic = $dbClass->query_execute($sqlGetPicId,[$target_file]);
+
+    $sqlUpdateUser = "UPDATE tbl_users SET profilPicId=? WHERE id=?";
+
+    $dbClass->query_execute($sqlUpdateUser, [$pic->id, $user->id]);
 
     if(isset($_POST["submit"])){
         $check = getimagesize($_FILES["profilpic"]["tmp_name"]);
@@ -54,4 +54,5 @@
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
+        header("Location:/?site=editprofil");
     }
