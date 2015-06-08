@@ -45,8 +45,7 @@
 
 				    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?>" />
 				    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?>" />
-				    <input type="tel" class="form-control input-sm" />
-				    <input type="date" class="form-control input-sm" />
+				    
 		            <input type="submit" class="hidden" id="submit-userInfo"/>
 				</form>
 			</div>
