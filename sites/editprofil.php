@@ -13,10 +13,22 @@
     $profilePic = $picLoaderClass->getProfilePicByUser($user->id);
 
     $sqlUserInfo = "SELECT username, mail, gender, phonenumber, birthday FROM tbl_users WHERE id=?";
-    $userInfo = $dbClass->query_execute($sqlUserInfo, [$user->id])
+    $userInfo = $dbClass->query_execute($sqlUserInfo, [$user->id]);
+
+    $sqlGetAllPicsOffUser = "SELECT picPath FROM tbl_pic WHERE userId=?";
+    $allPics = $dbClass->query_execute($sqlGetAllPicsOffUser, [$user->id]);
+
+    $allPicsArray = array();
+    foreach($allPics as $key => $value){
+        $allPicsArray[] = $value;
+    }
+
+    print_r($allPicsArray);
     //$allPics = $picLoaderClass->getAllPicsOffUser(1);
 ?>
-
+<div class="row profil-editbutton">
+    <a href="?site=profil" class="btn btn-primary btn-sm right" role="button">Back to profile</a>
+</div>
 <div class="row profil-wrapper">
     <div class="profil-profilpic">
         <img src="<?php if($profilePic!==null){echo $profilePic;}else{echo "pics/defaultProfilePic.png";} ?>" width="200">
@@ -84,7 +96,18 @@
         <div class="profil-heading">
             <h1>Your Pics</h1>
         </div>
-        <div class="profil-piccollegtion">
+        <table class="table">
+            <tr>
+                <?php for($i=0;count($allPicsArray)==5;$i++){ ?>
+                    <td><img src="<?php echo $allPicsArray[$i]; ?>" width="200"></td>
+                <?php } ?>
+                <td><img src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200"></td>
+                <td><img src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200"></td>
+                <td><img src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200"></td>
+                <td><img src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200"></td>
+            </tr>
+        </table>
+        <!--<div class="profil-piccollegtion">
             <div class="profil-inlineblock">
                 <img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
             </div>
@@ -100,6 +123,6 @@
             <div class="profil-inlineblock">
                 <img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

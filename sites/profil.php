@@ -1,13 +1,19 @@
 <?php
-require_once(__DIR__.'/../classes/database.php');
-//Profileinformation
-$dbCon = new Database();
+    require_once("classes/database.php");
+    require_once("classes/picLoader.php");
 
-$userName = $_SESSION['user_name'];
+    $dbClass = new Database();
+    $picLoaderClass = new picLoader($dbClass);
 
-$sql = "select * from tbl_users where username=?";
+    $username = $_SESSION['user_name'];
 
-$query = $dbCon->query_execute($sql, $userName);
+    $sqlUser = "SELECT id FROM tbl_Users WHERE username=?";
+
+    $user = $dbClass->query_execute($sqlUser, [$username]);
+    $profilePic = $picLoaderClass->getProfilePicByUser($user->id);
+
+    $sql = "select * from tbl_users where id=?";
+    $query = $dbCon->query_execute($sql, [$user->id]);
 ?>
 
 
@@ -16,8 +22,7 @@ $query = $dbCon->query_execute($sql, $userName);
 </div>
 <div class="row profil-wrapper">
 	<div class="profil-profilpic">
-		<?php // load profilpic ?>
-		<img class="" src="pics/defaultProfilePic.png" width="200">
+		<img class="" src="<?php if($profilePic!==null){echo $profilePic;}else{echo "pics/defaultProfilePic.png";} ?>" width="200">
 	</div>
 	<div class="profil-userinfo">
 		<div class="profil-label">
@@ -29,16 +34,15 @@ $query = $dbCon->query_execute($sql, $userName);
 	  	</div>
 		<div class="profil-inputs">
 		  <fieldset disabled>
-		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?></p><br/>
-		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?></p><br/> 
-		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Gender"; } else { if($query->gender == 1){echo"Male";}else{echo"Female";}} ?></p><br/> 
-		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?></p><br/> 
-		    <p class="form-control input-sm"><?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?></p><br/> 
+		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?>" />
+		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?>" />
+		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Gender"; } else { if($query->gender == 1){echo"Male";}else{echo"Female";}} ?>" />
+		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Phonenumber"; } else { echo $query->phonenumber; }?>" />
+		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Birthday"; } else { echo $query->birthday; } ?>" />
 		  </fieldset>
 		</div>
 	</div>
 	<div class="profil-mostLiked">
-		<?php // load most liked pic ?>
   		<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
 	</div>
 </div>

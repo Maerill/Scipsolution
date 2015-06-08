@@ -31,6 +31,9 @@ class Database {
         $stmt =  $this->mysqli->stmt_init();
         if(!$stmt->prepare($sql))
             return false;
+//        echo "<pre>";
+//        print_r($stmt);
+//        echo "</pre>";
         if(count($params) !== 0) {
             $params = is_array($params) ? $params : [$params];
             $bind_types = '';
