@@ -14,7 +14,7 @@
 				if(isset($_SESSION['user_name'])){
 					switch ($page) {
 						default:
-							header("Location: ?site=overview");
+							header("Location: ?site=profil");
 							break;
 						case "profil":
 							$title .= "Profil";
