@@ -11,11 +11,6 @@ if (isset($_POST['submit_login'])) {
 	else {
 		if(check_user($_POST['username'], $_POST['password']))
 		{
-			//	Sessionvariabe + auf Profilseite gehen
-			//$userName = $_POST['username'];
-			//$dbCon = new Database();
-			//$sql = "SELECT id FROM tbl_users WHERE username=?"
-			//$userId = $dbCon->query_execute($sql, $userName);
 
 			$_SESSION['user_name'] = $_POST['username'];
 
