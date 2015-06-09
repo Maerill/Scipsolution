@@ -14,6 +14,24 @@
 
     $sql = "select * from tbl_users where id=?";
     $query = $dbCon->query_execute($sql, [$user->id]);
+
+    $sqlGetAllPicsOffUser = "SELECT picPath FROM tbl_pic WHERE userId=?";
+    $allPicsArray = $dbClass->query_execute($sqlGetAllPicsOffUser, [$user->id]);
+
+    function objectToArray($d) {
+        if(is_object($d)) {
+            $d = get_object_vars($d);
+        }
+        if(is_array($d)) {
+            return array_map(__FUNCTION__, $d); // recursive
+        } else {
+            return $d;
+        }
+    }
+
+    $recursiveArray = array();
+
+    $recursiveArray = objectToArray($allPicsArray);
 ?>
 
 
@@ -47,26 +65,63 @@
 	</div>
 </div>
 <div class="container-fluid">
-	<div class="row">
-		<div class="profil-heading">
-			<h1>Your Pics</h1>
-		</div>
-		<div class="profil-piccollegtion">
-			<div class="profil-inlineblock">
-				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
-			</div>
-			<div class="profil-inlineblock">
-				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
-			</div>
-			<div class="profil-inlineblock">
-				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
-			</div>
-			<div class="profil-inlineblock">
-				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
-			</div>
-			<div class="profil-inlineblock">
-				<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="profil-heading">
+            <h1>Your Pics</h1>
+        </div>
+        <table class="table">
+            <?php if(count($recursiveArray) <= 5){ ?>
+                <tr class="profile-tr">
+                    <?php for($x=0;$x < 5;$x++){ ?>
+                        <?php if($x < count($recursiveArray)){ ?>
+                            <td class="setWidth"><img src="<?php echo $recursiveArray[$x]['picPath']; ?>" width="200"></td>
+                        <?php }else{ ?>
+                            <td class="setWidth"><img src="pics/white.gif" /></td>
+                        <?php }?>
+                    <?php } ?>
+                </tr>
+            <?php }elseif(count($recursiveArray) <= 10){ ?>
+                <tr class="profile-tr">
+                    <?php for($x=0;$x < 5;$x++){ ?>
+                        <?php if($x < count($recursiveArray)){ ?>
+                            <td class="setWidth"><img src="<?php echo $recursiveArray[$x]['picPath']; ?>" width="200"></td>
+                        <?php }?>
+                    <?php } ?>
+                </tr>
+                <tr class="profile-tr">
+                    <?php for($x=5;$x < 10;$x++){ ?>
+                        <?php if($x < count($recursiveArray)){ ?>
+                            <td class="setWidth"><img src="<?php echo $recursiveArray[$x]['picPath']; ?>" width="200"></td>
+                        <?php }else{ ?>
+                            <td class="setWidth"><img src="pics/white.gif" /></td>
+                        <?php }?>
+                    <?php } ?>
+                </tr>
+            <?php }else{ ?>
+                <tr class="profile-tr">
+                    <?php for($x=0;$x < 5;$x++){ ?>
+                        <?php if($x < count($recursiveArray)){ ?>
+                            <td class="setWidth"><img src="<?php echo $recursiveArray[$x]['picPath']; ?>" width="200"></td>
+                        <?php }?>
+                    <?php } ?>
+                </tr>
+                <tr class="profile-tr">
+                    <?php for($x=5;$x < 10;$x++){ ?>
+                        <?php if($x < count($recursiveArray)){ ?>
+                            <td class="setWidth"><img src="<?php echo $recursiveArray[$x]['picPath']; ?>" width="200"></td>
+                        <?php }?>
+                    <?php } ?>
+                </tr>
+                <tr class="profile-tr">
+                    <?php for($x=10;$x < 15;$x++){ ?>
+                        <?php if($x < count($recursiveArray)){ ?>
+                            <td class="setWidth"><img src="<?php echo $recursiveArray[$x]['picPath']; ?>" width="200"></td>
+                        <?php }else{ ?>
+                            <td class="setWidth"><img src="pics/white.gif" /></td>
+                        <?php }?>
+                    <?php } ?>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
 </div>

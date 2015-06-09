@@ -57,7 +57,21 @@ class Database {
         $stmt->execute();
         $result = $stmt->get_result();
         if(is_object($result) === false)
-            return false;
+            return null;
+        if($result){
+            $resArray = array();
+            while($row = $result->fetch_object()){
+                $resArray[] = $row;
+            }
+
+            if (empty($resArray)) {
+                return null;
+            } elseif (count($resArray) === 1) {
+                return $resArray[0];
+            }
+
+            return $resArray;
+        }
         return $result->fetch_object();
     }
     

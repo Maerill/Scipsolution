@@ -298,3 +298,13 @@ a {
 .overview-heading {
 	margin-left: 15px;
 }
+
+.profile-tr {
+    height: 200px;
+}
+
+.setWidth {
+    width:200px;
+    height: 200px;
+    vertical-align: middle !important;
+}
