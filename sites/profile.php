@@ -35,22 +35,22 @@
 ?>
 
 
-<div class="row profil-editbutton">
-	<a href="?site=editprofil" class="btn btn-primary btn-sm right" role="button">Edit profil</a>
+<div class="row profile-editbutton">
+	<a href="?site=editprofile" class="btn btn-primary btn-sm right" role="button">Edit profile</a>
 </div>
-<div class="row profil-wrapper">
-	<div class="profil-profilpic">
+<div class="row profile-wrapper">
+	<div class="profile-profilepic">
 		<img class="" src="<?php if($profilePic!==null){echo $profilePic;}else{echo "pics/defaultProfilePic.png";} ?>" width="200">
 	</div>
-	<div class="profil-userinfo">
-		<div class="profil-label">
+	<div class="profile-userinfo">
+		<div class="profile-label">
 			<label for="username" class="control-label">Username:</label>
 		    <label for="email" class="control-label">Email:</label>
 		    <label for="gender" class="control-label">Gender:</label>
 		    <label for="phonenumber" class="control-label">Phonenumber:</label>
 		    <label for="birthday" class="control-label">Birthday:</label>
 	  	</div>
-		<div class="profil-inputs">
+		<div class="profile-inputs">
 		  <fieldset disabled>
 		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Username"; } else { echo $query->username; } ?>" />
 		    <input class="form-control input-sm" value="<?php if ($query === null) { echo "Can't find Mail"; } else  {echo $query->mail; } ?>" />
@@ -60,13 +60,13 @@
 		  </fieldset>
 		</div>
 	</div>
-	<div class="profil-mostLiked">
+	<div class="profile-mostLiked">
   		<img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
 	</div>
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="profil-heading">
+        <div class="profile-heading">
             <h1>Your Pics</h1>
         </div>
         <table class="table">

@@ -32,4 +32,4 @@
 
     $_SESSION['user_name'] = $username;
 
-    header("Location:/?site=editprofil");
+    header("Location:/?site=editprofile");

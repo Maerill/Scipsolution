@@ -50,5 +50,5 @@
             echo "Sorry, there was an error uploading your file.";
             die;
         }
-        header("Location:/?site=editprofil");
+        header("Location:/?site=editprofile");
     }

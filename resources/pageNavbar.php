@@ -6,7 +6,7 @@
     		</div>
     		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     			<ul class="nav navbar-nav">
-      				<li><a href="?site=profil">Profil</a></li>
+      				<li><a href="?site=profile">Profile</a></li>
       				<li><a href="?site=overview">Overview</a></li>
       			</ul>
     			<ul class="nav navbar-nav navbar-right">    		

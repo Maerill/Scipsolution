@@ -11,7 +11,7 @@ if (isset($_POST['submit_login'])) {
 	else {
 		if(check_user($_POST['username'], $_POST['password']))
 		{
-			//	Sessionvariabe + auf Profilseite gehen
+			//	Sessionvariabe + auf profileseite gehen
 			//$userName = $_POST['username'];
 			//$dbCon = new Database();
 			//$sql = "SELECT id FROM tbl_users WHERE username=?"
@@ -19,7 +19,7 @@ if (isset($_POST['submit_login'])) {
 
 			$_SESSION['user_name'] = $_POST['username'];
 
-			header("location: ?site=profil");
+			header("location: ?site=profile");
 		}
 		else
 		{

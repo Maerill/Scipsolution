@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `username` varchar(31) NOT NULL,
   `password` varchar(60) NOT NULL,
   `mail` varchar(63) DEFAULT NULL,
-  `profilPicId` int(11) DEFAULT NULL,
+  `profilePicId` int(11) DEFAULT NULL,
   `gender` tinyint(1) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `phonenumber` varchar(15) DEFAULT NULL
@@ -68,7 +68,7 @@ ALTER TABLE `tbl_pic`
 -- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  ADD PRIMARY KEY (`id`), ADD KEY `picId` (`profilPicId`), ADD KEY `profilPicId` (`profilPicId`);
+  ADD PRIMARY KEY (`id`), ADD KEY `picId` (`profilePicId`), ADD KEY `profilePicId` (`profilePicId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -98,7 +98,7 @@ ADD CONSTRAINT `tbl_pic_userId_to_tbl_users_Id` FOREIGN KEY (`userId`) REFERENCE
 -- Constraints for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-ADD CONSTRAINT `tbl_user_profilPicId_to_tbl_pic_Id` FOREIGN KEY (`profilPicId`) REFERENCES `tbl_pic` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `tbl_user_profilePicId_to_tbl_pic_Id` FOREIGN KEY (`profilePicId`) REFERENCES `tbl_pic` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

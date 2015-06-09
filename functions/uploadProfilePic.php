@@ -4,7 +4,7 @@
     $dbClass = new Database();
 
     $target_dir = "pics/";
-    $target_file = $target_dir . basename($_FILES["profilpic"]["name"]);
+    $target_file = $target_dir . basename($_FILES["profilepic"]["name"]);
     $absoluteTargetDir = __DIR__.'/../'.$target_file;
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -21,12 +21,12 @@
 
     $pic = $dbClass->query_execute($sqlGetPicId,[$target_file]);
 
-    $sqlUpdateUser = "UPDATE tbl_users SET profilPicId=? WHERE id=?";
+    $sqlUpdateUser = "UPDATE tbl_users SET profilePicId=? WHERE id=?";
 
     $dbClass->query_execute($sqlUpdateUser, [$pic->id, $user->id]);
 
     if(isset($_POST["submit"])){
-        $check = getimagesize($_FILES["profilpic"]["tmp_name"]);
+        $check = getimagesize($_FILES["profilepic"]["tmp_name"]);
         if($check !== false){
             echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
@@ -49,10 +49,10 @@
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
     } else {
-        if (move_uploaded_file($_FILES["profilpic"]["tmp_name"], $absoluteTargetDir)) {
-            echo "The file ". basename( $_FILES["profilpic"]["name"]). " has been uploaded.";
+        if (move_uploaded_file($_FILES["profilepic"]["tmp_name"], $absoluteTargetDir)) {
+            echo "The file ". basename( $_FILES["profilepic"]["name"]). " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
-        header("Location:/?site=editprofil");
+        header("Location:/?site=editprofile");
     }

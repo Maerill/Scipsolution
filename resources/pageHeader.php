@@ -14,10 +14,10 @@
 				if(isset($_SESSION['user_name'])){
 					switch ($page) {
 						default:
-							header("Location: ?site=profil");
+							header("Location: ?site=profile");
 							break;
-						case "profil":
-							$title .= "Profil";
+						case "profile":
+							$title .= "Profile";
 							$para = "Here you can see and edit your account information as well as see every of your uploaded pics.";
 							echo $title;
 							break;
@@ -26,9 +26,9 @@
 							$para = "Here you can see every picture, sort on uploading date.";
 							echo $title;
 							break;
-						case "editprofil":
-							$title .= "Profil editor";
-							$para = "Edit your profil like you want.";
+						case "editprofile":
+							$title .= "Profile editor";
+							$para = "Edit your profile like you want.";
 							echo $title;
 							break;
 						case "logout":

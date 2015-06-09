@@ -13,11 +13,11 @@ class picLoader {
     }
 
     public function getProfilePicByUser($userId) {
-        $sqlPicId = "SELECT profilPicId FROM tbl_users WHERE id=?";
+        $sqlPicId = "SELECT profilePicId FROM tbl_users WHERE id=?";
         $result = $this->database->query_execute($sqlPicId, [$userId]);
 
-        if(isset($result->profilPicId)) {
-            $profilePicId = $result->profilPicId;
+        if(isset($result->profilePicId)) {
+            $profilePicId = $result->profilePicId;
             $sqlProfilePicPath = "SELECT picPath FROM tbl_pic WHERE id=?";
             $profilePic = $this->database->query_execute($sqlProfilePicPath, [$profilePicId]);
 

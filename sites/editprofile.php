@@ -33,26 +33,26 @@
 
     $recursiveArray = objectToArray($allPicsArray);
 ?>
-<div class="row profil-editbutton">
-    <a href="?site=profil" class="btn btn-primary btn-sm right" role="button">Back to profile</a>
+<div class="row profile-editbutton">
+    <a href="?site=profile" class="btn btn-primary btn-sm right" role="button">Back to profile</a>
 </div>
-<div class="row profil-wrapper">
-    <div class="profil-profilpic">
+<div class="row profile-wrapper">
+    <div class="profile-profilepic">
         <img src="<?php if($profilePic!==null){echo $profilePic;}else{echo "pics/defaultProfilePic.png";} ?>" width="200">
     </div>
-    <div class="profil-userinfo">
-        <div class="profil-label">
+    <div class="profile-userinfo">
+        <div class="profile-label">
             <label for="username" class="control-label">Username:</label>
             <label for="mail" class="control-label">Email:</label>
             <label for="gender" class="control-label">Gender:</label>
             <label for="phonenumber" class="control-label">Phonenumber:</label>
             <label for="birthday" class="control-label">Birthday:</label>
         </div>
-        <div class="profil-inputs">
-            <form class="form-group" action="functions/uploadProfil.php" method="post">
+        <div class="profile-inputs">
+            <form class="form-group" action="functions/uploadprofile.php" method="post">
                 <input type="text" name="username" class="form-control input-sm" value="<?php echo $userInfo->username ?>" />
                 <input type="email" name="mail" class="form-control input-sm" value="<?php echo $userInfo->mail ?>" />
-                <div class="profil-radio">
+                <div class="profile-radio">
                     <label class="radio-inline">
                         <input type="radio" name="RadioOption" value="1" <?php if($userInfo->gender == 1){echo "checked";} ?> /> Male
                     </label>
@@ -66,41 +66,36 @@
             </form>
         </div>
     </div>
-    <div class="profil-mostLiked">
-        <?php // load most liked pic ?>
-        <img class="" src="pics/defaultProfilePic.png" width="200">
+    <div class="profile-mostLiked">
+        <img class="" src="http://preprod.picture-organic-clothing.com/wp-content/uploads/2015/03/4-encore.png" width="200">
     </div>
 </div>
 <div class="row">
-    <div class="profil-uploaddiv">
-        <div class="profil-uploadbtn">
+    <div class="profile-uploaddiv">
+        <div class="profile-uploadbtn">
             <form class="form-group" action="functions/uploadProfilePic.php" method="post" enctype='multipart/form-data'>
-                <input type="file" name="profilpic" />
-                <button type="submit" name="submitProfilePic" class="btn btn-primary">Upload Profilepic</button>
+                <input type="file" name="profilepic" id="profileFile" />
+                <button type="submit" name="submitProfilePic" class="btn btn-primary" id="profilePic" disabled>Upload Profilepic</button>
             </form>
         </div>
     </div>
-    <div class="profil-savediv">
-        <div class="profil-savebtn">
+    <div class="profile-savediv">
+        <div class="profile-savebtn">
             <label class="btn btn-primary" for="submit-userInfo">Save Profile</label>
         </div>
     </div>
-    <div class="profil-uploadpicdiv">
-        <div class="profil-uploadpicbtn">
+    <div class="profile-uploadpicdiv">
+        <div class="profile-uploadpicbtn">
             <form class="form-group" action="functions/uploadPic.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="pic" />
-                <?php if(count($_FILES) == 0 OR $_FILES['pic']['name'] == '' OR $_FILES['pic']['size'] == 0){ ?>
-                    <button type="submit" name="submitPic" class="btn btn-primary">Upload Pic</button>
-                <?php }else{ ?>
-                    <button type="submit" name="submitPic" class="btn btn-primary">Upload Pic</button>
-                <?php } ?>
+                <input type="file" name="pic" id="uploadFile" />
+                <button type="submit" name="submitPic" class="btn btn-primary" id="uploadPic" disabled>Upload Pic</button>
             </form>
         </div>
     </div>
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="profil-heading">
+        <div class="profile-heading">
             <h1>Your Pics</h1>
         </div>
         <table class="table">
@@ -159,3 +154,15 @@
         </table>
     </div>
 </div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#uploadFile').click(function () {
+            $('#uploadPic').removeAttr("disabled");
+        });
+
+        $('#profileFile').click(function () {
+            $('#profilePic').removeAttr("disabled");
+        });
+    })
+</script>

@@ -144,8 +144,8 @@ function insert_user($username, $password){
     global $dbUser, $dbPass, $dbName;
     //SQL Statement
     //$date = (string)date('d.m.Y');
-    $sql = 'INSERT INTO tb_users(Username, Password, Mail, Profilpic)';
-    $sql = $sql . ' VALUES("'.$username.'","'.md5($password).'", "'.$mail.'","/../pics/defaultProfilePic.png")';
+    $sql = 'INSERT INTO tb_users(Username, Password, Mail, profilepic)';
+    $sql = $sql . ' VALUES("'.$username.'","'.md5($password).'", "'.$mail.'","/../pics/defaultprofilePic.png")';
     //DB Verbindung aufbauen
      $con = connectDb($dbUser, $dbPass);
      //SQL Select

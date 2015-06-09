@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pic` (
 --
 
 INSERT INTO `tbl_pic` (`id`, `picPath`, `likes`, `dislikes`, `comments`, `userId`) VALUES
-(1, 'pics/defaultProfilPic.png', NULL, NULL, NULL, 1),
+(1, 'pics/defaultprofilePic.png', NULL, NULL, NULL, 1),
 (2, 'pics/Desert.jpg', NULL, NULL, NULL, 1),
 (3, 'pics/Jellyfish.jpg', NULL, NULL, NULL, 1),
 (4, 'pics/logo.png', NULL, NULL, NULL, 1),
